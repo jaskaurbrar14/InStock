@@ -14,3 +14,5 @@ const Header = () => {
     </main>
   );
 };
+
+export default Header;
