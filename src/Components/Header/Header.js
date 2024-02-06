@@ -10,6 +10,13 @@ const Header = () => {
         <div className="header__logo">
           <img src={InstockLogo} className="header__image" alt="InstockImage" />
         </div>
+
+        <div className="header__navlinks">
+          <ul className="header__navitems">
+            <li className="header__warehouses">Warehouses</li>
+            <li className="header__inventory">Inventory</li>
+          </ul>
+        </div>
       </div>
     </main>
   );
