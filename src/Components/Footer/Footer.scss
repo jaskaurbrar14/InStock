@@ -3,23 +3,19 @@
 @use "../../Style/Partials/variable" as *;
 @use "../../Style/Partials/typography" as *;
 
-.footer{
-    text-align: center;
-    margin-top: 2rem;
-    @include tablet-and-desktop{
-
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  @include tablet-and-desktop {
+  }
+  @include desktop {
+  }
+  &__tag {
+    @include mobile-p3-body-small;
+    color: $secondary-slate;
+    @include tablet-and-desktop {
     }
-    @include desktop{
-
+    @include desktop {
     }
-    &__tag{
-        @include mobile-p3-body-small;
-        color: $secondary-slate;
-        @include tablet-and-desktop{
-
-        }
-        @include desktop{
-    
-        }
-    }
+  }
 }
