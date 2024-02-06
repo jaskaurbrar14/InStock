@@ -1,6 +1,6 @@
 import "./editWarehouse.scss";
 import backarrow from "../../assets/Icons/arrow_back-24px.svg";
-function editWarehouse() {
+function EditWarehouse() {
   return (
     <section className="editWarehouse">
       <div className="editWarehouse__container">
@@ -17,4 +17,4 @@ function editWarehouse() {
   );
 }
 
-export default editWarehouse;
+export default EditWarehouse;
