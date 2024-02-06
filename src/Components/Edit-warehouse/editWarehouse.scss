@@ -1,0 +1,56 @@
+@use "../../Style/Partials/global" as *;
+@use "../../Style/Partials/mixins" as *;
+@use "../../Style/Partials/variable" as *;
+@use "../../Style/Partials/typography" as *;
+
+.editWarehouse{
+    background-color: $primary-white;
+    @include mobile-header;
+    color: $primary-black;
+    @include tablet-and-desktop{
+
+    }
+    @include desktop{
+
+    }
+    &__container{
+        @include tablet-and-desktop{
+
+        }
+        @include desktop{
+    
+        }
+    }
+    &__header-wrapper{
+        @include tablet-and-desktop{
+
+        }
+        @include desktop{
+    
+        }
+    }
+    &__header-icon{
+        @include tablet-and-desktop{
+
+        }
+        @include desktop{
+    
+        }
+    }
+    &__title-wrap{
+        @include tablet-and-desktop{
+
+        }
+        @include desktop{
+    
+        }
+    }
+    &__title{
+        @include tablet-and-desktop{
+
+        }
+        @include desktop{
+    
+        }
+    }
+}
