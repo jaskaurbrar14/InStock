@@ -12,7 +12,7 @@ function App() {
       </main>
       <Footer />
     </BrowserRouter>
-  );
+  )
 }
 
 export default App;
