@@ -4,6 +4,8 @@
 @use "../../Style/Partials/typography" as *;
 
 .footer{
+    text-align: center;
+    margin-top: 2rem;
     @include tablet-and-desktop{
 
     }
