@@ -1,3 +1,7 @@
+
+import "./App.scss";
+import Header from "./Components/Header/Header";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Footer from "./Components/Footer/Footer";
