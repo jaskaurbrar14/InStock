@@ -1,22 +1,20 @@
-
 import "./App.scss";
 import Header from "./Components/Header/Header";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes } from "react-router-dom";
 import "./App.scss";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <main className="main">
-        <Routes>
-        </Routes>
+        <Routes></Routes>
       </main>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
-  )
-
+  );
 }
 
 export default App;
