@@ -54,6 +54,7 @@
   &__form-name {
     @include mobile-labels-links-buttons;
     font-weight: $text-demi;
+    padding-top: .7rem;
   }
   &__name-input {
     border-radius: 1.25rem;
@@ -117,5 +118,17 @@
       height: 2.375rem;
       margin-left: 1rem;
     }
+  }
+  &__form-name-wrap{
+    position: relative;
+  }
+  &__error-message{
+    color: $supporting-red;
+    font-size: $mobile-table-header-fontsize;
+    position: absolute;
+    bottom: -2rem; 
+    left: .9rem;
+    margin: 0;
+    
   }
 }
