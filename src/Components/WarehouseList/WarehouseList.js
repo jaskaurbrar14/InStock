@@ -1,18 +1,18 @@
 import './WarehouseList.scss';
+import '../../Style/Partials/_global.scss'
+
 import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import editIcon from '../../assets/Icons/edit-24px.svg';
 import sortIcon from '../../assets/Icons/sort-24px.svg';
 import chevronIcon from '../../assets/Icons/chevron_right-24px.svg';
 import searchIcon from '../../assets/Icons/search-24px.svg';
 
-
-
 function WarehouseList () {
     return (
         <div className="warehouselist">
             <div className="warehouselist__header"> 
                 <div className="warehouselist__header__title"> 
-                    <h1>Warehouse</h1>
+                    <h1>Warehouses</h1>
                 </div>
                 <div className="warehouselist__header__search">
 
@@ -62,7 +62,7 @@ function WarehouseList () {
                     <div className="warehouselist__items__row__field">
                         <p>+1 (629) 555-0129 Paulja@instock.com</p>  
                     </div>
-                    <div className="warehouselist__items__row__field">
+                    <div className="warehouselist__items__row__field warehouselist__items__row__action">
                         <button>
                             <img src={deleteIcon} alt="delete button"/>
                         </button>
@@ -71,49 +71,8 @@ function WarehouseList () {
                         </button>
                     </div>
                 </div>
-                <div className="warehouselist__items__row">
-                    <div className="warehouselist__items__row__field"> 
-                        <p>Manhattan</p>
-                    </div>
-                    <div className="warehouselist__items__row__field">
-                        <p>503 Broadway, New York, USA</p>
-                    </div>
-                    <div className="warehouselist__items__row__field">
-                        <p>Parmin Aujla</p>
-                    </div>
-                    <div className="warehouselist__items__row__field">
-                        <p>+1 (629) 555-0129 Paulja@instock.com</p>  
-                    </div>
-                    <div className="warehouselist__items__row__field">
-                        <button>delete</button>
-                        <button>edit</button>
-                    </div>
-                </div>
-                <div className="warehouselist__items__row">
-                    <div className="warehouselist__items__row__field"> 
-                        <p>Manhattan</p>
-                    </div>
-                    <div className="warehouselist__items__row__field">
-                        <p>503 Broadway, New York, USA</p>
-                    </div>
-                    <div className="warehouselist__items__row__field">
-                        <p>Parmin Aujla</p>
-                    </div>
-                    <div className="warehouselist__items__row__field">
-                        <p>+1 (629) 555-0129 Paulja@instock.com</p>  
-                    </div>
-                    <div className="warehouselist__items__row__field">
-                        <button>delete</button>
-                        <button>edit</button>
-                    </div>
-                </div>
-                <div className="warehouselist__items__row"></div>
-                <div className="warehouselist__items__row">Row3</div>
-                <div className="warehouselist__items__row">Row4</div>
             </div>
-
         </div>
-
     )
 }
 export default WarehouseList;
