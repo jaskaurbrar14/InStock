@@ -134,7 +134,7 @@ function EditWarehouse() {
           value={formData[field]}
           onChange={(e) => handleInputChange(field, e.target.value)}
         />
-        {formErrors[field] && <span className="error-message">{formErrors[field]}</span>}
+        {formErrors[field] && <span className="editWarehouse__error-message">{formErrors[field]}</span>}
       </div>
     );
   }
