@@ -2,14 +2,12 @@
 @use '/src/Style/Partials/mixins' as *;
 
 .warehouselist {
-    // border: 1px solid red;
     margin: 8%;
     border: 1px solid $primary-indigo;
-
+    font-size: 0.9rem;
 
 
     &__header {
-        // border: 1px solid green;
         display: flex;
         align-items: center;
         padding: 2%;
@@ -79,6 +77,7 @@
         &__addbutton {
             flex: 1;
             width: 95%;
+            padding-bottom: 2rem;
             button {
                 margin-left: 3px;
                 border-radius: 20px;
@@ -93,34 +92,44 @@
 
             @include tablet-and-desktop {
                 flex: 2;
-                padding-top: 5px;
+                padding-top: 2.5rem;
             }
 
             @include desktop {
                 flex: 2;
-                padding-bottom: 10px;
+                padding-bottom: 2rem;
             }
         }
         
     }
 
     &__items {
-        // border: 1px solid blue;
 
         &__headerrow {
             background-color: $background-lightgrey;
+            display: none !important;
+
+            @include tablet-and-desktop {
+                display: flex !important;
+            }
         }
 
         &__row {
             display: flex;
-            // border-bottom: 2px solid lightgrey;
             border-bottom: 1px solid $secondary-cloud;
             padding-left: 2.5%;
             justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            @include tablet-and-desktop {
+                flex-direction: row;
+            }
 
             &__field {
                 flex: 1;
                 display: flex;
+                width: 50%;
 
                 button {
                     background-color: transparent;
@@ -140,9 +149,12 @@
             }
 
             &__action {
+                flex: 1;
                 margin-left: auto;
-                display: flex; /* Ensure the buttons inside are aligned properly */
+                display: flex; 
                 align-items: center;
+                justify-content: center;
+                width: 100%;
                 img {
                     width: 24px;
                 }

@@ -42,13 +42,28 @@ function WarehouseList () {
                         <p>CONTACT INFORMATION</p>  
                         <img src={sortIcon} alt="sort icon"/>
                     </div>
-                    <div className="warehouselist__items__row__field">
+                    <div className="warehouselist__items__row__field warehouselist__items__row__action">
                         <p>ACTIONS</p>
-                        <img src={sortIcon} alt="sort icon"/>
                     </div>
                 </div>
 
                 <div className="warehouselist__items__row">
+                    {/* <div>
+                        <div>
+                            <p>WAREHOUSE</p>
+                        </div>
+                        <div>
+                            <p>Manhattan</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                        <div></div>
+                    </div> */}
                     <div className="warehouselist__items__row__field"> 
                         <p><a href="#">Manhattan</a></p>
                         <img className="warehouselist__items__row__field__name" src={chevronIcon} alt="arrow icon"/>
@@ -71,6 +86,30 @@ function WarehouseList () {
                         </button>
                     </div>
                 </div>
+
+                {/* <div className="warehouselist__items__row">
+                    <div className="warehouselist__items__row__field"> 
+                        <p><a href="#">Manhattan</a></p>
+                        <img className="warehouselist__items__row__field__name" src={chevronIcon} alt="arrow icon"/>
+                    </div>
+                    <div className="warehouselist__items__row__field">
+                        <p>503 Broadway, New York, USA</p>
+                    </div>
+                    <div className="warehouselist__items__row__field">
+                        <p>Parmin Aujla</p>
+                    </div>
+                    <div className="warehouselist__items__row__field">
+                        <p>+1 (629) 555-0129 Paulja@instock.com</p>  
+                    </div>
+                    <div className="warehouselist__items__row__field warehouselist__items__row__action">
+                        <button>
+                            <img src={deleteIcon} alt="delete button"/>
+                        </button>
+                        <button>
+                             <img src={editIcon} alt="edit button"/>
+                        </button>
+                    </div>
+                </div> */}
             </div>
         </div>
     )
