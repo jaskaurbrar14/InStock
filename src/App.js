@@ -10,7 +10,7 @@ function App() {
       <Header />
       <main className="main">
         <Routes>
-        <Route element={<EditWarehouse />} />
+        <Route path="/edit-warehouse" element={<EditWarehouse />} />
         </Routes>
       </main>
       <Footer />
