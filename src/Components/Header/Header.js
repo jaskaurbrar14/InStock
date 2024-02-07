@@ -5,7 +5,7 @@ import "./Header.scss";
 
 const Header = () => {
   return (
-    <main className="header">
+    <header className="header">
       <div className="header__wrapper">
         <div className="header__logo">
           <img src={InstockLogo} className="header__image" alt="InstockImage" />
@@ -18,7 +18,7 @@ const Header = () => {
           </ul>
         </div>
       </div>
-    </main>
+    </header>
   );
 };
 
