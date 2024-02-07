@@ -3,11 +3,13 @@ import "./App.scss";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import EditWarehouse from "./Components/Edit-warehouse/editWarehouse";
+import WarehouseList from "./Components/WarehouseList/WarehouseList";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
+      <WarehouseList></WarehouseList>
       <main className="main">
         <Routes>
           <Route element={<EditWarehouse />} />
