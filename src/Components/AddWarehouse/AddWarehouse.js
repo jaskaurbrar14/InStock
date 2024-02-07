@@ -63,7 +63,7 @@ function AddWarehouse() {
               <div className="addWarehouse__form-header-wrap">
                 <h2 className="addWarehouse__form-header">Warehouse Details</h2>
               </div>
-              {renderInput("tes", "Warehouse Name", "Washington")}
+              {renderInput("warehouseName", "Warehouse Name", "Washington")}
               {renderInput(
                 "streetAddress",
                 "Street Address",
