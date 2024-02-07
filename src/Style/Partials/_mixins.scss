@@ -20,8 +20,8 @@
   line-height: $mobile-subheader-lineheight;
 }
 @mixin mobile-labels-links-buttons {
-  font-size: $mobile-labels-links-fontsize;
-  line-height: $mobile-labels-links-lineheight;
+  font-size: $mobile-labels-links-buttons-fontsize;
+  line-height: $mobile-labels-links-buttons-lineheight;
 }
 
 @mixin mobile-table-header{
