@@ -1,0 +1,17 @@
+@use "../../Style/Partials/variable" as *;
+@use "../../Style/Partials/typography" as *;
+@use "../../Style/Partials/mixins" as *;
+@use "../../Style/Partials/global" as *;
+
+.inventorylist{
+        &__detailparent{
+            display: flex;
+            flex-direction: row;
+            // justify-content: space-between;
+        }
+        &__title{
+            @include tablet-and-desktop{
+                display: none;
+            }
+        }
+    }

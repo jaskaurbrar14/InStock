@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use "./variable" as *;
 
 @mixin tablet-and-desktop {
   @media screen and (min-width: $tablet-breakpoint) {
