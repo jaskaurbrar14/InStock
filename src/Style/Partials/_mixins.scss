@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use "./variable" as *;
 
 @mixin tablet-and-desktop {
   @media screen and (min-width: $tablet-breakpoint) {
@@ -20,55 +20,55 @@
   line-height: $mobile-subheader-lineheight;
 }
 @mixin mobile-labels-links-buttons {
-  font-size: $mobile-title-fontsize;
-  line-height: $mobile-title-lineheight;
+  font-size: $mobile-labels-links-buttons-fontsize;
+  line-height: $mobile-labels-links-buttons-lineheight;
 }
 
-@mixin mobile-table-header {
-  font-size: $mobile-body-fontsize;
-  line-height: $mobile-body-lineheight;
+@mixin mobile-table-header{
+  font-size: $mobile-table-header-fontsize;
+  line-height: $mobile-table-header-lineheight;
 }
 
 @mixin mobilep1-body-large {
-  font-size: $mobile-btn-fontsize;
-  line-height: $mobile-btn-lineheight;
+  font-size: $mobilep1-body-large-fontsize;
+  line-height: $mobilep1-body-large-lineheight;
 }
 @mixin mobile-p2-body-medium {
-  font-size: $mobile-btn-fontsize;
-  line-height: $mobile-btn-lineheight;
+  font-size: $mobile-p2-body-medium-fontsize;
+  line-height: $mobile-p2-body-medium-lineheight;
 }
 @mixin mobile-p3-body-small {
-  font-size: $mobile-btn-fontsize;
-  line-height: $mobile-btn-lineheight;
+  font-size: $mobile-p3-body-small-fontsize;
+  line-height: $mobile-p3-body-small-lineheight;
 }
 //TABLET AND DESKTOP
 @mixin tabdesk-header {
-  font-size: $header-fontsize;
-  line-height: $header-lineheight;
+  font-size: $tabdesk-header-fontsize;
+  line-height: $tabdesk-header-lineheight;
 }
 @mixin tabdesk-subheader {
-  font-size: $title-fontsize;
-  line-height: $title-lineheight;
+  font-size: $tabdesk-subheader-fontsize;
+  line-height: $tabdesk-subheader-lineheight;
 }
 
 @mixin tabdesk-labels-links-buttons {
-  font-size: $body-fontsize;
-  line-height: $body-lineheight;
+  font-size: $tabdesk-labels-links-buttons-fontsize;
+  line-height: $tabdesk-labels-links-buttons-lineheight;
 }
 
-@mixin tabdesk-table-header {
-  font-size: $btn-fontsize;
-  line-height: $btn-lineheight;
+@mixin tabdesk-table-header{
+  font-size: $tabdesk-table-header-fontsize;
+  line-height: $tabdesk-table-header-lineheight;
 }
 @mixin tabdesk-p1-body-large {
-  font-size: $btn-fontsize;
-  line-height: $btn-lineheight;
+  font-size: $tabdesk-p1-body-large-fontsize;
+  line-height: $tabdesk-p1-body-large-lineheight;
 }
 @mixin tabdesk-p2-body-medium {
-  font-size: $btn-fontsize;
-  line-height: $btn-lineheight;
+  font-size: $tabdesk-p2-body-medium-fontsize;
+  line-height: $tabdesk-p2-body-medium-lineheight;
 }
 @mixin tabdesk-p3-body-small {
-  font-size: $btn-fontsize;
-  line-height: $btn-lineheight;
+  font-size: $tabdesk-p3-body-small-fontsize;
+  line-height: $tabdesk-p3-body-small-lineheight;
 }
