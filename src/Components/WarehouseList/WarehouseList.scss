@@ -1,0 +1,90 @@
+.warehouselist {
+    border: 1px solid red;
+
+    &__header {
+        border: 1px solid green;
+        display: flex;
+        align-items: center;
+
+        &__title {
+            flex: 1;
+        }
+
+        &__search {
+            
+            position: relative;
+
+            input {
+                border-radius: 20px;
+                padding: 8px;
+                outline: none;
+
+              
+            }
+
+            &__icon {
+                position: absolute;
+                right: 0;
+                width: 24px; 
+                height: 24px;
+                cursor: pointer;
+                padding-top: 5px;
+                padding-right: 5px;
+            }
+
+        }
+        
+        &__addbutton {
+            button {
+                margin-left: 10px;
+                border-radius: 20px;
+                padding: 10px 20px;
+                color: white;
+                cursor: pointer;
+                background-color: navy;
+
+            }
+        }
+        
+    }
+
+    &__items {
+        border: 1px solid blue;
+
+        &__headerrow {
+            background-color: lightgray;
+        }
+
+        &__row {
+            display: flex;
+            border-bottom: 2px solid lightgrey;
+
+
+            &__field {
+                flex: 1;
+                
+                display: flex;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                }
+
+                img {
+                    width: 16px; 
+
+                }
+
+                &__name {
+                    padding-bottom: 15px;
+                    margin-left: 5px;
+                }
+
+            }
+        }
+
+    }
+    
+}
+
+
