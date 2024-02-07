@@ -1,22 +1,13 @@
 import React, { useState } from "react";
-import "./editWarehouse.scss";
+import "./AddWarehouse.scss";
 import backarrow from "../../assets/Icons/arrow_back-24px.svg";
 
 function AddWarehouse() {
-  const [formData, setFormData] = useState({
-    warehouseName: "",
-    streetAddress: "",
-    city: "",
-    country: "",
-    contactName: "",
-    position: "",
-    phoneNumber: "",
-    email: "",
-  });
+  const [formData, setFormData] = useState({});
 
   const [formErrors, setFormErrors] = useState({});
 
-  const handleInputChange = (field, value) => {
+  const handleAddWarehouse = (field, value) => {
     setFormData({ ...formData, [field]: value });
     setFormErrors({ ...formErrors, [field]: "" });
   };
@@ -49,21 +40,6 @@ function AddWarehouse() {
       return;
     }
     console.log("Form submitted:", formData);
-    clearForm();
-  };
-  const clearForm = () => {
-    setFormData({
-      warehouseName: "",
-      streetAddress: "",
-      city: "",
-      country: "",
-      contactName: "",
-      position: "",
-      phoneNumber: "",
-      email: "",
-    });
-
-    setFormErrors({});
   };
 
   return (
@@ -112,7 +88,7 @@ function AddWarehouse() {
               <button
                 type="button"
                 className="addWarehouse__btn-cancel"
-                onClick={clearForm}
+                //onClick={clearForm}
               >
                 Cancel
               </button>
@@ -137,7 +113,7 @@ function AddWarehouse() {
           className="addWarehouse__name-input"
           placeholder={placeholder}
           value={formData[field]}
-          onChange={(e) => handleInputChange(field, e.target.value)}
+          onChange={(e) => handleAddWarehouse(field, e.target.value)}
         />
         {formErrors[field] && (
           <span className="addWarehouse__error-message">

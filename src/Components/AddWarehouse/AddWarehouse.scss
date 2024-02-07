@@ -1,0 +1,133 @@
+@use "../../Style/Partials/global" as *;
+@use "../../Style/Partials/mixins" as *;
+@use "../../Style/Partials/variable" as *;
+@use "../../Style/Partials/typography" as *;
+
+.addWarehouse {
+  margin: 0 1rem;
+  border-radius: 0.25rem;
+  background-color: $primary-white;
+  box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+  @include mobile-header;
+  color: $primary-black;
+  @include tablet-and-desktop {
+    margin: 0 2rem;
+  }
+  @include desktop {
+    margin: 0 7rem;
+  }
+  &__header-wrapper {
+    border-bottom: 1px solid $secondary-cloud;
+    display: flex;
+    padding: 2rem 0;
+    @include tablet-and-desktop {
+      padding: 2rem;
+    }
+  }
+  &__title {
+    @include mobile-header;
+    font-weight: $text-demi;
+    margin: 0;
+    margin-left: 0.5rem;
+    @include tablet-and-desktop {
+      @include tabdesk-header;
+    }
+  }
+  &__detail-form-wrap {
+    @include tablet-and-desktop {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  &__detail {
+    padding: 0 1rem;
+    @include tablet-and-desktop {
+      padding: 0 2rem;
+    }
+  }
+  &__form-header {
+    @include mobile-subheader;
+    @include tablet-and-desktop {
+      @include tabdesk-subheader;
+    }
+  }
+  &__form-name {
+    @include mobile-labels-links-buttons;
+    font-weight: $text-demi;
+    padding-top: 0.7rem;
+  }
+  &__name-input {
+    border-radius: 1.25rem;
+    border: 1px solid $secondary-cloud;
+    height: 2.25rem;
+    width: 12.4375rem;
+    padding: 0 1rem;
+    @include mobile-labels-links-buttons;
+    @include tablet-and-desktop {
+    }
+    @include desktop {
+      width: 26.8125rem;
+      height: 2.375rem;
+    }
+  }
+  &__divider {
+    border-bottom: 1px solid $secondary-cloud;
+    margin-top: 2rem;
+    @include tablet-and-desktop {
+      border-left: 1px solid $secondary-cloud;
+      border-bottom: none;
+      text-align: center;
+    }
+  }
+  &__btn-wrap {
+    background-color: $background-lightgrey;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    margin-top: 1.5rem;
+    @include tablet-and-desktop {
+      padding-right: 3.5rem;
+      justify-content: flex-end;
+    }
+    @include desktop {
+      padding-right: 2rem;
+    }
+  }
+  &__btn-cancel {
+    background-color: $primary-white;
+    border-radius: 1.25rem;
+    border: $secondary-cloud;
+    text-align: center;
+    height: 2.25rem;
+    width: 7.6875rem;
+    @include tablet-and-desktop {
+      width: 4.5rem;
+      height: 2.375rem;
+    }
+  }
+  &__btn-save {
+    background-color: $primary-indigo;
+    text-align: center;
+    height: 2.25rem;
+    width: 7.6875rem;
+    border-radius: 1.25rem;
+    border: none;
+    color: $primary-white;
+    @include tablet-and-desktop {
+      width: 4.5rem;
+      height: 2.375rem;
+      margin-left: 1rem;
+    }
+  }
+  &__form-name-wrap {
+    position: relative;
+  }
+  &__error-message {
+    color: $supporting-red;
+    font-size: $mobile-table-header-fontsize;
+    position: absolute;
+    bottom: -2rem;
+    left: 0.9rem;
+    margin: 0;
+  }
+}
