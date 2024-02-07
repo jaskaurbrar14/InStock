@@ -4,6 +4,7 @@
 @use "../../Style/Partials/typography" as *;
 
 .addWarehouse {
+  position: absolute;
   margin: 0 1rem;
   border-radius: 0.25rem;
   background-color: $primary-white;
@@ -46,11 +47,12 @@
     }
   }
   &__form-header {
-    @include mobile-subheader;
+    // @include mobile-subheader;
     @include tablet-and-desktop {
       @include tabdesk-subheader;
     }
   }
+
   &__form-name {
     @include mobile-labels-links-buttons;
     font-weight: $text-demi;
