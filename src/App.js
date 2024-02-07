@@ -1,16 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
-import "./App.css";
+import InventoryList from "./Components/InventoryList/InventoryList";
+import "./App.scss";
 
 function App() {
   return (
   <BrowserRouter>
   <main>
   <Routes>
-    <Route></Route>
+    <Route>
+    <Route path="/" element={<InventoryList />} />
+    </Route>
   </Routes>
   </main>
-  <Footer />
+  {/* <Footer /> */}
   </BrowserRouter>
   );
 }
