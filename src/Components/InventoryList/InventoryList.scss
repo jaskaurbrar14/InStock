@@ -2,16 +2,140 @@
 @use "../../Style/Partials/typography" as *;
 @use "../../Style/Partials/mixins" as *;
 @use "../../Style/Partials/global" as *;
-
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+.main{
+    border-radius: 4px;
+}
 .inventorylist{
-        &__detailparent{
+    &__headparent{
+        @include tablet-and-desktop{
             display: flex;
             flex-direction: row;
-            // justify-content: space-between;
-        }
-        &__title{
+        } 
+    }
+    &__header{
+        font-size: $mobile-header-fontsize;
+        padding-top: 1rem;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        @include tablet-and-desktop{
+            font-size: $tabdesk-header-fontsize;
+            // padding-bottom: $tabdesk-header-lineheight;
+    }
+    }
+    &__form{
+        &--parent{
+            padding-bottom: 1.25rem;
+            border-bottom: 2px solid $secondary-cloud;
             @include tablet-and-desktop{
-                display: none;
+                display: flex;
+                flex-direction: row;
+                border-bottom: none;
+                margin-top: 3rem;
+            }
+        }
+        &--searchinput{
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 20px;
+            border: 1px solid $secondary-cloud;
+            padding: 0.5rem;
+            padding-left: 1rem;
+            background-image: url("../../assets/Icons/search-24px.svg");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            width: 85%;
+            &::placeholder{
+                font-family: "Titillium Web", sans-serif;
+                }
+            @include tablet-and-desktop{
+                    width: 12.5rem;
+                    height: 2.5rem;
+                    &::placeholder{
+                        font-size: $tabdesk-labels-links-buttons-fontsize;
+                        }
+            }
+        }
+        &--additembutton{
+            margin-left: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid $primary-indigo;
+            background-color: $primary-indigo;
+            color: $primary-white;
+            padding: 0.5rem;
+            width: 85%;
+            @include tablet-and-desktop{
+                width: 9rem;
+                height: 2.5rem;
+                font-size: $tabdesk-labels-links-buttons-fontsize;
             }
         }
     }
+    &__container{
+        padding-bottom: 1rem;
+        border-bottom: 2px solid $secondary-cloud;
+    }
+    &__detailparent{
+            display: flex;
+            flex-direction: row;
+            gap: 25%;
+            padding-left: 1.5rem;
+            // justify-content: space-between;
+    }
+    &__title{
+        font-size: $mobile-table-header-fontsize;
+        line-height: $mobile-table-header-lineheight;
+        color: $secondary-slate;
+        font-weight: $text-demi;
+        margin-top: 1.25rem;
+            @include tablet-and-desktop{
+                display: none;
+            }
+            &--tabletdesktop{
+                display: none;
+                @include tablet-and-desktop{
+                    display: inline;
+                }
+            }
+        }
+    &__value{
+        margin: 0;
+        font-size: $mobile-p2-body-medium-fontsize;
+        &--product{
+            color: $primary-indigo;
+            font-weight: $text-demi;
+            margin: 0;
+            &::after {
+                content: " >";
+              }
+        } 
+    }
+    &__button{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1rem 2rem 0 1rem;
+            &--delete, &--edit{
+                border: none;
+                background-color: white;
+            }
+        }
+}
+.availability2{
+    color: $supporting-red;
+    font-weight: $text-demi;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    background-color: #fbf2ee;
+}
+.availability1{
+        color: $supporting-green;
+        font-weight: $text-demi;
+        padding: 0.25rem 0.5rem;
+        border-radius: 20px;
+        background-color: #eef6f4;
+}
