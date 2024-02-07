@@ -10,12 +10,13 @@ function App() {
       <Header />
       <main className="main">
         <Routes>
-        <Route path="/edit-warehouse" element={<EditWarehouse />} />
+          <Route element={<EditWarehouse />} />
+          <Route path="/edit-warehouse" element={<EditWarehouse />} />
         </Routes>
       </main>
       <Footer />
     </BrowserRouter>
-  )
-};
+  );
+}
 
 export default App;
