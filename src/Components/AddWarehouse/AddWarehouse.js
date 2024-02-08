@@ -71,7 +71,7 @@ function AddWarehouse() {
             <div className="addWarehouse__divider"></div>
             <div className="addWarehouse__detail">
               <div className="addWarehouse__form-header-wrap">
-                <h2 className="addtWarehouse__form-header">Contact Details</h2>
+                <h2 className="addWarehouse__form-header">Contact Details</h2>
               </div>
               {renderInput("contactName", "Contact Name", "Contact Name")}
               {renderInput("position", "Position", "Position")}
@@ -91,7 +91,7 @@ function AddWarehouse() {
             </div>
             <div className="addWarehouse__btn-save-wrap">
               <button type="submit" className="addWarehouse__btn-save">
-                Add Warehouse
+                + Add Warehouse
               </button>
             </div>
           </div>

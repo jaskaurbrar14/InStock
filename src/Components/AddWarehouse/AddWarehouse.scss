@@ -102,6 +102,11 @@
     text-align: center;
     height: 2.25rem;
     width: 7.6875rem;
+    border: 1px solid $secondary-cloud;
+    &:hover {
+      border: 1px solid $primary-indigo;
+      color: $primary-indigo;
+    }
     @include tablet-and-desktop {
       width: 4.5rem;
       height: 2.375rem;
@@ -115,8 +120,12 @@
     border-radius: 1.25rem;
     border: none;
     color: $primary-white;
+    &:hover {
+      background: $primary-black;
+      outline: 0;
+    }
     @include tablet-and-desktop {
-      width: 4.5rem;
+      width: 8rem;
       height: 2.375rem;
       margin-left: 1rem;
     }
