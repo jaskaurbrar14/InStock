@@ -158,13 +158,11 @@
                 justify-content: space-between;
                 padding-bottom: 5%;
 
-                div {
-                    button {
-                        background-color: transparent;
-                        border: none;
-                        img {
-                            width: 24px;
-                        }
+                &__btns {
+                    background-color: transparent;
+                    border: none;
+                    img {
+                        width: 24px;
                     }
                 }
             }
