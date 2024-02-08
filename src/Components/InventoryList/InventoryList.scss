@@ -6,15 +6,21 @@
 *::before,
 *::after{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 .main{
     border-radius: 4px;
 }
-.inventorylist{
+.header{
     &__headparent{
         @include tablet-and-desktop{
             display: flex;
             flex-direction: row;
+            gap: 11rem;
+        } 
+        @include desktop{
+            gap: 36rem;
         } 
     }
     &__header{
@@ -24,8 +30,14 @@
         margin-bottom: 0.75rem;
         @include tablet-and-desktop{
             font-size: $tabdesk-header-fontsize;
-            // padding-bottom: $tabdesk-header-lineheight;
-    }
+            padding-top: 2rem;
+            padding-left: 2rem;
+        }
+        @include desktop{
+            font-size: $tabdesk-header-fontsize;
+            padding-top: 2rem;
+            padding-left: 2rem;
+        }
     }
     &__form{
         &--parent{
@@ -35,7 +47,7 @@
                 display: flex;
                 flex-direction: row;
                 border-bottom: none;
-                margin-top: 3rem;
+                margin-top: 2rem;
             }
         }
         &--searchinput{
@@ -59,6 +71,9 @@
                         font-size: $tabdesk-labels-links-buttons-fontsize;
                         }
             }
+            @include desktop{
+                width: 19rem;
+        }
         }
         &--additembutton{
             margin-left: 1.5rem;
@@ -75,32 +90,51 @@
             }
         }
     }
+}
+.table{
+    &__mobilecontainer{
+        border-bottom: 2px solid $secondary-cloud;
+        @include tablet-and-desktop{
+            display: none;
+        }
+    }
     &__container{
         padding-bottom: 1rem;
         border-bottom: 2px solid $secondary-cloud;
+                @include tablet-and-desktop{
+            display: none;
+        }
     }
     &__detailparent{
             display: flex;
             flex-direction: row;
             gap: 25%;
             padding-left: 1.5rem;
-            // justify-content: space-between;
+            // @include tablet-and-desktop{
+            //     display: flex;
+            //     gap: 0;
+            //     padding-left: 2rem;
+            // }
     }
+    // &__wrapper{
+        // @include tablet-and-desktop{
+        //     display: flex;
+        //     gap: 0%;
+        // }
+    // }
     &__title{
         font-size: $mobile-table-header-fontsize;
         line-height: $mobile-table-header-lineheight;
         color: $secondary-slate;
         font-weight: $text-demi;
         margin-top: 1.25rem;
-            @include tablet-and-desktop{
-                display: none;
-            }
-            &--tabletdesktop{
-                display: none;
-                @include tablet-and-desktop{
-                    display: inline;
-                }
-            }
+            // &--tabletdesktopparent{
+            //     font-size: $tabdesk-table-header-fontsize;
+            //     display: flex;
+            //     flex-direction: row;
+            //     gap: 3rem;
+            //     padding-left: 2rem;
+            // }
         }
     &__value{
         margin: 0;
@@ -118,24 +152,95 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 1rem 2rem 0 1rem;
+            padding: 0.5rem 2rem 0 1rem;
             &--delete, &--edit{
                 border: none;
                 background-color: white;
             }
+            @include desktop{
+                justify-content: flex-start;
+                gap: 1rem;
+            }
         }
 }
-.availability2{
+.status2{
     color: $supporting-red;
     font-weight: $text-demi;
     padding: 0.25rem 0.5rem;
     border-radius: 20px;
     background-color: #fbf2ee;
 }
-.availability1{
+.status1{
         color: $supporting-green;
         font-weight: $text-demi;
         padding: 0.25rem 0.5rem;
         border-radius: 20px;
         background-color: #eef6f4;
+}
+
+
+.tabletablet{
+    @include mobile{
+        display: none;
+    }
+    width: 100%;
+    border-collapse: collapse;
+    &__row{
+        border-bottom: 1px solid $secondary-cloud;
+    }
+    &__title{
+        background-color: $background-lightgrey;
+        &--item{
+            padding: 0.5rem 1rem;
+            color: $secondary-slate;
+            font-size: $tabdesk-labels-links-buttons-fontsize;
+                &::after {
+                margin-left: 5px;
+                content: '';
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background-image: url('../../assets/Icons/sort-24px.svg');
+                background-size: 100% 100%;
+            }
+            @include desktop{
+                width: 10rem;
+            }
+        }
+        &--item1{
+            padding: 0.5rem 1rem;
+            color: $secondary-slate;
+            font-size: $tabdesk-labels-links-buttons-fontsize;
+            @include desktop{
+                width: 10rem;
+            }
+        }
+    }
+    &__data{
+        font-size: $tabdesk-p2-body-medium-fontsize;
+        padding: 0.9rem 1rem;
+        &--product{
+            padding-left: 1.5rem;
+            color: $primary-indigo;
+            font-weight: $text-demi;
+            margin: 0;
+            &::after {
+            content: " >";
+            }
+        }
+    }
+}
+.status3{
+    color: $supporting-red;
+    font-weight: $text-demi;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    background-color: #fbf2ee;
+}
+.status4{
+    color: $supporting-green;
+    font-weight: $text-demi;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    background-color: #eef6f4;
 }
