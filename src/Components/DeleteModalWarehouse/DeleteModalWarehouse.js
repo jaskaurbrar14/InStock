@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-import close from "../../Assets/Icons/close-24px.svg";
+import React, { useEffect, useRef } from "react";
+import close from "../../assets/Icons/close-24px.svg";
 import ReactDom from "react-dom";
 import "./DeleteModalWarehouse.scss";
 export default function DeleteModalWarehouse({ modalClose }) {
   const modalRef = useRef(null);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
