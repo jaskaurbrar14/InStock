@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import './WarehouseList.scss';
 import '../../Style/Partials/_global.scss'
 
@@ -7,12 +9,25 @@ import sortIcon from '../../assets/Icons/sort-24px.svg';
 import chevronIcon from '../../assets/Icons/chevron_right-24px.svg';
 import searchIcon from '../../assets/Icons/search-24px.svg';
 
+import DeleteModal from '../../Components/DeleteModal/DeleteModal'
+
 function WarehouseList () {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <div className="warehouselist">
             <div className="warehouselist__header"> 
                 <div className="warehouselist__header__title"> 
                     <h1>Warehouses</h1>
+                    <DeleteModal />
                 </div>
                 <div className="warehouselist__header__search">
                      <input placeholder="Search..." name="search" type="input"></input>
@@ -85,12 +100,13 @@ function WarehouseList () {
                     </div>
                     <div className="warehouselist__items__row__actioncol">
                         <div>
-                            <button>
+                            <button className="warehouselist__items__row__actioncol__btns" onClick={openModal}>
                                 <img src={deleteIcon} alt="delete button"/>
                             </button>
+                            <DeleteModal isOpen={isModalOpen} closeModal={closeModal} warehouseName={'Manhattan'} />
                         </div>
                        <div>
-                            <button>
+                            <button className="warehouselist__items__row__actioncol__btns">
                                 <img src={editIcon} alt="edit button"/>
                             </button>
                        </div>
@@ -135,12 +151,13 @@ function WarehouseList () {
                     </div>
                     <div className="warehouselist__items__row__actioncol">
                         <div>
-                            <button>
+                            <button className="warehouselist__items__row__actioncol__btns" onClick={openModal}>
                                 <img src={deleteIcon} alt="delete button"/>
                             </button>
+                            <DeleteModal isOpen={isModalOpen} closeModal={closeModal} warehouseName={'Manhattan'} />
                         </div>
                        <div>
-                            <button>
+                            <button className="warehouselist__items__row__actioncol__btns">
                                 <img src={editIcon} alt="edit button"/>
                             </button>
                        </div>
