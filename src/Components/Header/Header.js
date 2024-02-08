@@ -1,5 +1,5 @@
 import React from "react";
-import InstockLogo from "../../assets/Logo/InStock-Logo_1x.png";
+import InstockLogo from "../../Assets/Logo/InStock-Logo_1x.png";
 
 import "./Header.scss";
 
