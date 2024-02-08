@@ -224,6 +224,9 @@
             &::after {
             content: " >";
             }
+            @include tablet-and-desktop{
+                padding-left: 2.5rem;
+            }
             @include desktop{
                 padding: 1rem 2rem;
             }
