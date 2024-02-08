@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./add-inventory.scss";
 import backarrow from "../../assets/Icons/arrow_back-24px.svg";
 import dropdown from "../../assets/Icons/arrow_drop_down-24px.svg";
-function AddInventory() {
+
+function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
   const [formData, setFormData] = useState({
     itemName: "",
     description: "",
@@ -23,24 +24,26 @@ function AddInventory() {
     setFormData({ ...formData, status, quantity: 0 });
   };
 
-  const handleAddItem = () => {
-    const validationErrors = {};
+  const handleAddItem = (e) => {
+    e.preventDefault();
 
-    for (const field in formData) {
-      if (field !== "quantity" && !formData[field].trim()) {
-        validationErrors[field] = `${field} is required`;
-      }
-    }
+    const validationErrors = {
+      itemName: !formData.itemName.trim() ? "Item Name is required" : "",
+      description: !formData.description.trim() ? "Description is required" : "",
+      category: !formData.category.trim() ? "Category is required" : "",
+      quantity:
+        formData.status === "In Stock" && formData.quantity <= 0
+          ? "Quantity must be greater than 0"
+          : "",
+    };
 
-    if (formData.status === "In Stock" && formData.quantity <= 0) {
-      validationErrors.quantity = "Quantity must be greater than 0";
-    }
-
-    if (Object.keys(validationErrors).length > 0) {
+    if (Object.values(validationErrors).some((error) => !!error)) {
       setFormErrors(validationErrors);
       return;
     }
-    console.log("New Item:", formData);
+
+    const newItem = { ...formData, id: Date.now() }; 
+    setInventory([...inventory, newItem]);
 
     setFormData({
       itemName: "",
@@ -50,9 +53,8 @@ function AddInventory() {
       quantity: 0,
       warehouse: "",
     });
-    setFormErrors({});
+    onClose();
   };
-
   return (
     <section className="addinventory">
       <div className="addinventory__wrap">
@@ -87,7 +89,7 @@ function AddInventory() {
                     }
                   />
                   {formErrors.itemName && (
-                    <span className="error-message">{formErrors.itemName}</span>
+                    <span className="addinventory__error-message">{formErrors.itemName}</span>
                   )}
                 </div>
                 <div>
@@ -164,7 +166,7 @@ function AddInventory() {
                       }
                     />
                     {formErrors.quantity && (
-                      <span className="error-message">
+                      <span className="addinventory__error-message">
                         {formErrors.quantity}
                       </span>
                     )}

@@ -43,6 +43,9 @@
   &__detail {
     padding: 0 1rem;
   }
+  &__form-detail{
+    position: relative;
+  }
   &__form-header {
     @include mobile-subheader;
   }
@@ -121,6 +124,14 @@
     @include desktop {
       top: 49%;
     }
+  }
+  &__error-message{
+    color: $supporting-red;
+    font-size: $mobile-table-header-fontsize;
+    position: absolute;
+    bottom: -1rem; 
+    left: .9rem;
+    margin: 0;
   }
   &__divider {
     border-bottom: 1px solid $secondary-cloud;
