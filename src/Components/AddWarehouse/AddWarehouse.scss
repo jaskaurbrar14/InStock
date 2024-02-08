@@ -47,7 +47,7 @@
     }
   }
   &__form-header {
-    // @include mobile-subheader;
+    @include mobile-subheader;
     @include tablet-and-desktop {
       @include tabdesk-subheader;
     }

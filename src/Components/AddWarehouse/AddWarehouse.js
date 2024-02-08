@@ -54,7 +54,7 @@ function AddWarehouse() {
             />
           </div>
           <div className="addWarehouse__title-wrap">
-            <h1 className="addWarehouse__title">Add Warehouse</h1>
+            <h1 className="addWarehouse__title">Add New Warehouse</h1>
           </div>
         </div>
         <form className="addWarehouse__detail-form" onSubmit={handleSubmit}>
@@ -63,24 +63,20 @@ function AddWarehouse() {
               <div className="addWarehouse__form-header-wrap">
                 <h2 className="addWarehouse__form-header">Warehouse Details</h2>
               </div>
-              {renderInput("warehouseName", "Warehouse Name", "Washington")}
-              {renderInput(
-                "streetAddress",
-                "Street Address",
-                "33 Pearl Street SW"
-              )}
-              {renderInput("city", "City", "Washington")}
-              {renderInput("country", "Country", "USA")}
+              {renderInput("warehouseName", "Warehouse Name", "Warehouse Name")}
+              {renderInput("streetAddress", "Street Address", "Street Address")}
+              {renderInput("city", "City", "City")}
+              {renderInput("country", "Country", "Country")}
             </div>
             <div className="addWarehouse__divider"></div>
             <div className="addWarehouse__detail">
               <div className="addWarehouse__form-header-wrap">
                 <h2 className="addtWarehouse__form-header">Contact Details</h2>
               </div>
-              {renderInput("contactName", "Contact Name", "Graeme Lyon")}
-              {renderInput("position", "Position", "Warehouse Manager")}
-              {renderInput("phoneNumber", "Phone Number", "+1 (647) 504-0911")}
-              {renderInput("email", "Email", "glyon@instock.com")}
+              {renderInput("contactName", "Contact Name", "Contact Name")}
+              {renderInput("position", "Position", "Position")}
+              {renderInput("phoneNumber", "Phone Number", "Phone Number")}
+              {renderInput("email", "Email", "Email")}
             </div>
           </div>
           <div className="addWarehouse__btn-wrap">
