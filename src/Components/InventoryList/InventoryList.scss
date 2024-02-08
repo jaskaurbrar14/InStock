@@ -191,7 +191,7 @@
     &__title{
         background-color: $background-lightgrey;
         &--item{
-            padding: 0.5rem 1rem;
+            // padding: 0.5rem 1rem;
             color: $secondary-slate;
             font-size: $tabdesk-labels-links-buttons-fontsize;
                 &::after {
@@ -208,11 +208,11 @@
             }
         }
         &--item1{
-            padding: 0.5rem 1rem;
+            // padding: 0.5rem 1rem;
             color: $secondary-slate;
             font-size: $tabdesk-labels-links-buttons-fontsize;
             @include desktop{
-                width: 10rem;
+                // width: 10rem;
             }
         }
     }
@@ -244,3 +244,12 @@
     border-radius: 20px;
     background-color: #eef6f4;
 }
+.tabletablet__data, .tabletablet__data--product{
+    padding: 1rem 2rem;
+    // &:nth-child(1) { width: 20%; } // Adjust width for the first column
+    // &:nth-child(2) { width: 20%; } // Adjust for the second column, and so on...
+    // Adjust the widths as per your requirement
+  }
+  .tabletablet__title--item{
+    padding: 1rem 2rem;
+  }
