@@ -9,8 +9,15 @@
     margin: 0;
     padding: 0;
 }
-.main{
-    border-radius: 4px;
+.inventorylist{
+    margin: 8% auto;
+    margin-top: -8%;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    background-color: $background-lightgrey;
+    @include tablet-and-desktop{
+        width: 95%;
+    }
 }
 .header{
     &__headparent{
@@ -20,7 +27,7 @@
             gap: 11rem;
         } 
         @include desktop{
-            gap: 36rem;
+            gap: 33rem;
         } 
     }
     &__header{
@@ -60,6 +67,7 @@
             background-image: url("../../assets/Icons/search-24px.svg");
             background-repeat: no-repeat;
             background-position: right 1rem center;
+            background-color: $background-lightgrey;
             width: 85%;
             &::placeholder{
                 font-family: "Titillium Web", sans-serif;
@@ -94,6 +102,9 @@
 .table{
     &__mobilecontainer{
         border-bottom: 2px solid $secondary-cloud;
+        &:hover{
+            background-color: $tablehover;
+        }
         @include tablet-and-desktop{
             display: none;
         }
@@ -110,31 +121,13 @@
             flex-direction: row;
             gap: 25%;
             padding-left: 1.5rem;
-            // @include tablet-and-desktop{
-            //     display: flex;
-            //     gap: 0;
-            //     padding-left: 2rem;
-            // }
     }
-    // &__wrapper{
-        // @include tablet-and-desktop{
-        //     display: flex;
-        //     gap: 0%;
-        // }
-    // }
     &__title{
         font-size: $mobile-table-header-fontsize;
         line-height: $mobile-table-header-lineheight;
         color: $secondary-slate;
         font-weight: $text-demi;
         margin-top: 1.25rem;
-            // &--tabletdesktopparent{
-            //     font-size: $tabdesk-table-header-fontsize;
-            //     display: flex;
-            //     flex-direction: row;
-            //     gap: 3rem;
-            //     padding-left: 2rem;
-            // }
         }
     &__value{
         margin: 0;
@@ -155,7 +148,7 @@
             padding: 0.5rem 2rem 0 1rem;
             &--delete, &--edit{
                 border: none;
-                background-color: white;
+                background-color: $background-lightgrey;
             }
             @include desktop{
                 justify-content: flex-start;
@@ -177,8 +170,6 @@
         border-radius: 20px;
         background-color: #eef6f4;
 }
-
-
 .tabletablet{
     @include mobile{
         display: none;
@@ -187,6 +178,9 @@
     border-collapse: collapse;
     &__row{
         border-bottom: 1px solid $secondary-cloud;
+        &:hover{
+            background-color: $tablehover;
+        }
     }
     &__title{
         background-color: $background-lightgrey;
@@ -212,13 +206,16 @@
             color: $secondary-slate;
             font-size: $tabdesk-labels-links-buttons-fontsize;
             @include desktop{
-                // width: 10rem;
+                padding: 1rem 2rem;
             }
         }
     }
     &__data{
         font-size: $tabdesk-p2-body-medium-fontsize;
         padding: 0.9rem 1rem;
+        @include desktop{
+            padding: 1rem 2rem;
+        }
         &--product{
             padding-left: 1.5rem;
             color: $primary-indigo;
@@ -226,6 +223,9 @@
             margin: 0;
             &::after {
             content: " >";
+            }
+            @include desktop{
+                padding: 1rem 2rem;
             }
         }
     }
@@ -244,12 +244,3 @@
     border-radius: 20px;
     background-color: #eef6f4;
 }
-.tabletablet__data, .tabletablet__data--product{
-    padding: 1rem 2rem;
-    // &:nth-child(1) { width: 20%; } // Adjust width for the first column
-    // &:nth-child(2) { width: 20%; } // Adjust for the second column, and so on...
-    // Adjust the widths as per your requirement
-  }
-  .tabletablet__title--item{
-    padding: 1rem 2rem;
-  }
