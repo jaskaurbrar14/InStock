@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import close from "../../assets/Icons/close-24px.svg";
 import ReactDom from "react-dom";
 import "./DeleteModalWarehouse.scss";
+
 export default function DeleteModalWarehouse({ modalClose }) {
   const modalRef = useRef(null);
 

@@ -1,0 +1,12 @@
+@use "../../Style/Partials/global" as *;
+@use "../../Style/Partials/mixins" as *;
+@use "../../Style/Partials/variable" as *;
+@use "../../Style/Partials/typography" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
