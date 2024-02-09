@@ -31,7 +31,7 @@ return(
   </section>
 
     <section className="contactinfo__parent">
-        <section className="contactinfo">
+        <section className="contactinfo__subparent1">
             <p className="contactinfo__title">WAREHOUSE ADDRESS:</p>
             <p className="contactinfo__data">33 Pearl Street SW, Washington, USA</p>
         </section>
