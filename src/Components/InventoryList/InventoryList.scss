@@ -10,13 +10,17 @@
     padding: 0;
 }
 .inventorylist{
-    margin: 8% auto;
-    margin-top: -8%;
+    margin: auto;
+    margin-top: -3%;
     border-radius: 6px;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
     background-color: $background-lightgrey;
+    max-width: 94%;
     @include tablet-and-desktop{
         width: 95%;
+    }
+    @include desktop{
+        max-width: 78%;
     }
 }
 .header{
@@ -24,21 +28,21 @@
         @include tablet-and-desktop{
             display: flex;
             flex-direction: row;
-            gap: 11rem;
+            gap: 8.5rem;
         } 
         @include desktop{
-            gap: 33rem;
+            gap: 21.5rem;
         } 
     }
     &__header{
         font-size: $mobile-header-fontsize;
-        padding-top: 1rem;
+        padding-top: 1.5rem;
         padding-left: 1.5rem;
         margin-bottom: 0.75rem;
         @include tablet-and-desktop{
             font-size: $tabdesk-header-fontsize;
             padding-top: 2rem;
-            padding-left: 2rem;
+            padding-left: 1.5rem;
         }
         @include desktop{
             font-size: $tabdesk-header-fontsize;
@@ -49,12 +53,14 @@
     &__form{
         &--parent{
             padding-bottom: 1.25rem;
-            border-bottom: 2px solid $secondary-cloud;
             @include tablet-and-desktop{
                 display: flex;
                 flex-direction: row;
                 border-bottom: none;
                 margin-top: 2rem;
+            }
+            @include desktop{
+                padding-bottom: 0.5rem;
             }
         }
         &--searchinput{
@@ -73,14 +79,15 @@
                 font-family: "Titillium Web", sans-serif;
                 }
             @include tablet-and-desktop{
-                    width: 12.5rem;
+                    width: 12rem;
                     height: 2.5rem;
                     &::placeholder{
                         font-size: $tabdesk-labels-links-buttons-fontsize;
                         }
             }
             @include desktop{
-                width: 19rem;
+                width: 17rem;
+                height: 2.3rem;
         }
         }
         &--additembutton{
@@ -95,6 +102,10 @@
                 width: 9rem;
                 height: 2.5rem;
                 font-size: $tabdesk-labels-links-buttons-fontsize;
+            }
+            @include desktop{
+                width: 8rem;
+                height: 2.3rem;
             }
         }
     }
@@ -128,6 +139,9 @@
         color: $secondary-slate;
         font-weight: $text-demi;
         margin-top: 1.25rem;
+        @include desktop{
+            font-size: $tabdesk-table-header-fontsize;
+        }
         }
     &__value{
         margin: 0;
@@ -139,20 +153,27 @@
             &::after {
                 content: " >";
               }
-        } 
+        }
     }
     &__button{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 0.5rem 2rem 0 1rem;
+            padding: 0.5rem 2rem 1rem 1rem;
+            @include desktop{
+                justify-content: flex-start;
+                gap: 1rem;
+                padding: 0.5rem 0 1rem 1rem;
+                margin-left: 2rem;
+            }
             &--delete, &--edit{
                 border: none;
                 background-color: $background-lightgrey;
             }
-            @include desktop{
-                justify-content: flex-start;
-                gap: 1rem;
+            &--deleteimg, &--editimg{
+                &:hover{
+                    background-color: $tablehover;
+                }
             }
         }
 }
@@ -185,7 +206,6 @@
     &__title{
         background-color: $background-lightgrey;
         &--item{
-            // padding: 0.5rem 1rem;
             color: $secondary-slate;
             font-size: $tabdesk-labels-links-buttons-fontsize;
                 &::after {
@@ -197,24 +217,29 @@
                 background-image: url('../../assets/Icons/sort-24px.svg');
                 background-size: 100% 100%;
             }
+            @include tablet-and-desktop{
+                padding-left: 1.5rem;
+            }
             @include desktop{
                 width: 10rem;
             }
         }
         &--item1{
-            // padding: 0.5rem 1rem;
             color: $secondary-slate;
             font-size: $tabdesk-labels-links-buttons-fontsize;
             @include desktop{
-                padding: 1rem 2rem;
+                padding: 1rem 2rem 1rem 6rem;
             }
         }
     }
     &__data{
         font-size: $tabdesk-p2-body-medium-fontsize;
-        padding: 0.9rem 1rem;
+        padding: 0.9rem 1rem 0 1.5rem;
         @include desktop{
-            padding: 1rem 2rem;
+            padding: 0 2rem 0 3rem;
+        }
+        &--qty{
+                padding-left: 4.5rem;
         }
         &--product{
             padding-left: 1.5rem;
@@ -226,6 +251,7 @@
             }
             @include tablet-and-desktop{
                 padding-left: 2.5rem;
+                padding-top: 1.5rem;
             }
             @include desktop{
                 padding: 1rem 2rem;

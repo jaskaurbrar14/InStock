@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <WarehouseList></WarehouseList>
+      {/* <WarehouseList></WarehouseList> */}
       <main className="main">
         <Routes>
           <Route element={<EditWarehouse />} />

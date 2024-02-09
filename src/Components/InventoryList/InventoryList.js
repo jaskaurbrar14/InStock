@@ -65,10 +65,10 @@ return(
     </section>
     <section className="table__button">
         <button className="table__button--delete">
-          <img src={deleteIcon} alt="delete icon"/>
+          <img className="table__button--deleteimg" src={deleteIcon} alt="delete icon"/>
         </button>
         <button className="table__button--edit">
-          <img src={editIcon} alt="edit icon"/>
+          <img className="table__button--editimg" src={editIcon} alt="edit icon"/>
         </button>
     </section>
   </div>
@@ -136,7 +136,7 @@ return(
         IN STOCK
     </span>
     </td>
-    <td className="tabletablet__data">500</td>
+    <td className="tabletablet__data--qty">500</td>
     <td className="tabletablet__data">Manhattan</td>
     <td className="tabletablet__data">
       <section className="table__button">
@@ -163,7 +163,7 @@ return(
         IN STOCK
       </span>
     </td>
-    <td className="tabletablet__data">500</td>
+    <td className="tabletablet__data--qty">500</td>
     <td className="tabletablet__data">Manhattan</td>
     <td className="tabletablet__data">
       <section className="table__button">
