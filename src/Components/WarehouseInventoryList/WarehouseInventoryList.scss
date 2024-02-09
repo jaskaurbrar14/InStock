@@ -9,22 +9,33 @@
     margin: 0;
     padding: 0;
 }
-.inventorylist{
+.warehouseinventorylist{
     margin: 8% auto;
     margin-top: -8%;
     border-radius: 6px;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-    background-color: $background-lightgrey;
+    background-color: white;
     @include tablet-and-desktop{
         width: 95%;
     }
 }
 .header{
+    &__backimage{
+        padding-top: 0.5rem;
+    }
     &__headparent{
+        display: flex;
+        flex-direction: row;
+        border-bottom: 2px solid $secondary-cloud;
+        padding-left: 1rem;
+        padding-top: 1rem;
         @include tablet-and-desktop{
             display: flex;
+            justify-content: left;
             flex-direction: row;
-            gap: 11rem;
+            gap: 0;
+            
+            // gap: 11rem;
         } 
         @include desktop{
             gap: 33rem;
@@ -33,11 +44,13 @@
     &__header{
         font-size: $mobile-header-fontsize;
         padding-top: 1rem;
-        padding-left: 1.5rem;
+        padding-left: 0.5rem;
+        padding-right: 16%;
         margin-bottom: 0.75rem;
         @include tablet-and-desktop{
             font-size: $tabdesk-header-fontsize;
             padding-top: 2rem;
+            padding-right: 0;
             padding-left: 2rem;
         }
         @include desktop{
@@ -46,59 +59,80 @@
             padding-left: 2rem;
         }
     }
-    &__form{
-        &--parent{
-            padding-bottom: 1.25rem;
-            border-bottom: 2px solid $secondary-cloud;
-            @include tablet-and-desktop{
-                display: flex;
-                flex-direction: row;
-                border-bottom: none;
-                margin-top: 2rem;
-            }
-        }
-        &--searchinput{
+    &__editbutton{
             margin-left: 1.5rem;
-            margin-bottom: 1rem;
-            border-radius: 20px;
-            border: 1px solid $secondary-cloud;
-            padding: 0.5rem;
-            padding-left: 1rem;
-            background-image: url("../../assets/Icons/search-24px.svg");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-color: $background-lightgrey;
-            width: 85%;
-            &::placeholder{
-                font-family: "Titillium Web", sans-serif;
-                }
-            @include tablet-and-desktop{
-                    width: 12.5rem;
-                    height: 2.5rem;
-                    &::placeholder{
-                        font-size: $tabdesk-labels-links-buttons-fontsize;
-                        }
-            }
-            @include desktop{
-                width: 19rem;
-        }
-        }
-        &--additembutton{
-            margin-left: 1.5rem;
-            border-radius: 20px;
+            border-radius: 50%;
             border: 1px solid $primary-indigo;
             background-color: $primary-indigo;
-            color: $primary-white;
-            padding: 0.5rem;
-            width: 85%;
+            // color: $primary-white;
+            // padding: 0.5rem;
+            width: 2rem;
+            height: 2rem;
+            margin-top: 1.5rem;
+            @include tablet-and-desktop{
+                border-radius: 25px;
+                width: 5.5rem;
+            }
+            &--span{
+                @include mobile{
+                    display: none;
+                }
+                @include tablet-and-desktop{
+                    display: inline-block;
+                    color: white;
+                }
+            }
+            &--image{
+                width: 20px;
+                padding-left: 1px;
+                padding-top: 2px;
+            }
             @include tablet-and-desktop{
                 width: 9rem;
                 height: 2.5rem;
                 font-size: $tabdesk-labels-links-buttons-fontsize;
             }
+            &--image{
+                filter: brightness(0) invert(1);
+            }
         }
+}
+.contactinfo{
+    &__parent{
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+    }
+    &__subparent{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    &__title{
+        font-size: $mobile-table-header-fontsize;
+        line-height: $mobile-table-header-lineheight;
+        color: $secondary-slate;
+        font-weight: $text-demi;
+        margin-top: 1.25rem;
+    }&__data{
+        margin: 0;
+        font-size: $mobile-p2-body-medium-fontsize;
     }
 }
+
+
+
+
+
+
+
+
+
+
 .table{
     &__mobilecontainer{
         border-top: 2px solid $secondary-cloud;
@@ -109,13 +143,13 @@
             display: none;
         }
     }
-    &__container{
-        padding-bottom: 1rem;
-        border-bottom: 2px solid $secondary-cloud;
-                @include tablet-and-desktop{
-            display: none;
-        }
-    }
+    // &__container{
+    //     padding-bottom: 1rem;
+    //     border-top: 2px solid $secondary-cloud;
+    //             @include tablet-and-desktop{
+    //         display: none;
+    //     }
+    // }
     &__detailparent{
             display: flex;
             flex-direction: row;
@@ -148,11 +182,13 @@
             padding: 0.5rem 2rem 0 1rem;
             &--delete, &--edit{
                 border: none;
-                background-color: $background-lightgrey;
             }
             @include desktop{
                 justify-content: flex-start;
                 gap: 1rem;
+            }
+            &--deleteimg, &--editimg{
+                background-color: white;
             }
         }
 }
@@ -183,7 +219,7 @@
         }
     }
     &__title{
-        background-color: $background-lightgrey;
+        background-color: white;
         &--item{
             // padding: 0.5rem 1rem;
             color: $secondary-slate;
