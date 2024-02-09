@@ -10,19 +10,7 @@ import sortIcon from "../../assets/Icons/sort-24px.svg";
 import chevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 import searchIcon from "../../assets/Icons/search-24px.svg";
 
-// import DeleteModal from "../../Components/DeleteModal/DeleteModal";
-
 function WarehouseList() {
-  //   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  //   const openModal = () => {
-  //     setIsModalOpen(true);
-  //   };
-
-  //   const closeModal = () => {
-  //     setIsModalOpen(false);
-  //   };
-
   const [openModal, setOpenModal] = useState(false);
   const modalOpen = () => {
     setOpenModal(true);
@@ -35,7 +23,6 @@ function WarehouseList() {
       <div className="warehouselist__header">
         <div className="warehouselist__header__title">
           <h1>Warehouses</h1>
-          {/* <DeleteModal /> */}
         </div>
         <div className="warehouselist__header__search">
           <input placeholder="Search..." name="search" type="input"></input>
@@ -128,16 +115,10 @@ function WarehouseList() {
             <div>
               <button
                 className="warehouselist__items__row__actioncol__btns"
-                // onClick={openModal}
                 onClick={modalOpen}
               >
                 <img src={deleteIcon} alt="delete button" />
               </button>
-              {/* <DeleteModal
-                isOpen={isModalOpen}
-                closeModal={closeModal}
-                warehouseName={"Manhattan"}
-              /> */}
               {openModal && <DeleteModalWarehouse modalClose={modalClose} />}
             </div>
             <div>
@@ -192,16 +173,10 @@ function WarehouseList() {
             <div>
               <button
                 className="warehouselist__items__row__actioncol__btns"
-                // onClick={openModal}
                 onClick={modalOpen}
               >
                 <img src={deleteIcon} alt="delete button" />
               </button>
-              {/* <DeleteModal
-                isOpen={isModalOpen}
-                closeModal={closeModal}
-                warehouseName={"Manhattan"}
-              /> */}
             </div>
             <div>
               <button className="warehouselist__items__row__actioncol__btns">

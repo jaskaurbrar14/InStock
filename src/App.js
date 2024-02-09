@@ -4,18 +4,18 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import EditWarehouse from "./Components/Edit-warehouse/editWarehouse";
 import WarehouseList from "./Components/WarehouseList/WarehouseList";
-import WarehousesList from "./Components/WarehousesList/WarehousesList";
+import InventoryItemDetails from "./Components/InventoryItemDetails/InventoryItemDetails";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <WarehouseList></WarehouseList>
+      {/* <WarehouseList></WarehouseList> */}
       <main className="main">
         <Routes>
-          <Route element={<EditWarehouse />} />
+          <Route path="/" element={<WarehouseList />} />
           <Route path="/edit-warehouse" element={<EditWarehouse />} />
-          <Route path="/" element={<WarehousesList />} />
+          <Route path="/inventory-item" element={<InventoryItemDetails />} />
         </Routes>
       </main>
       <Footer />
