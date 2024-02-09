@@ -72,13 +72,16 @@
     height: 2.25rem;
     width: 12.4375rem;
     padding: 0 1rem;
-    position: relative;
+    // position: relative;
     @include mobile-labels-links-buttons;
     @include tablet-and-desktop {
       width: 18rem;
     }
     @include desktop {
       width: 26.8125rem;
+    }
+    &:active{
+      border: 1px solid $primary-indigo !important;
     }
   }
   &__form-input-des {
@@ -87,6 +90,7 @@
     height: 7.5rem;
     width: 12.4375rem;
     padding: 0 1rem;
+    position: relative;
     &::placeholder {
       text-align: left;
       padding-top: 1rem;
@@ -103,26 +107,53 @@
       display: none;
     }
   }
-  &__form-input-icon {
+  &__form-category-name{
+    position: relative;
+    border-radius: 1.25rem;
+    border: 1px solid $secondary-cloud;
+    height: 2.25rem;
+    width: 12.4375rem;
+    padding: 0 1rem;
+    @include tablet-and-desktop {
+      width: 18rem;
+    }
+    @include desktop {
+      width: 26.8125rem;
+    }
+  }
+  &__form-categoryinput-icon{
     position: absolute;
-    top: 52.5%;
+    top: 58%;
     right: 3rem;
     pointer-events: none;
     @include tablet-and-desktop {
       top: 80%;
       right: 55%;
     }
+    &[data-status="Out of Stock"] {
+      display: none;
+    }
   }
   &__form-input-icon-quality {
     position: absolute;
-    top: 87.5%;
+    // top: 87%;
     right: 3rem;
     pointer-events: none;
     @include tablet-and-desktop {
-      top: 64%;
+      top: 63.5%;
     }
     @include desktop {
       top: 49%;
+    }
+    &[data-status="Out of Stock"] {
+      top: 48.5%;
+    }
+  }
+  &__form-input,
+  &__form-input-des,
+  &__form-category-name {
+    &.error {
+      border: 1px solid $supporting-red;
     }
   }
   &__error-message{
@@ -132,7 +163,40 @@
     bottom: -1rem; 
     left: .9rem;
     margin: 0;
+   
   }
+  &__error-message-description{
+    color: $supporting-red;
+    font-size: $mobile-table-header-fontsize;
+    position: absolute;
+    top: 26.5rem;
+    left: 1.5rem;
+    margin: 0;
+  }
+  &__error-message-category{
+    color: $supporting-red;
+    font-size: $mobile-table-header-fontsize;
+    position: absolute;
+    top: 33rem;
+    left: 1.5rem;
+    margin: 0;
+  }
+  &__error-message-quantity{
+    color: $supporting-red;
+    font-size: $mobile-table-header-fontsize;
+    position: absolute;
+    top: 20.5rem;
+    left: 24rem;
+    margin: 0;
+  }
+  &__error-message-warehouse {
+    color: $supporting-red;
+    font-size: $mobile-table-header-fontsize;
+    position: absolute;
+    left: 24rem;
+    margin: 0;
+  }
+  
   &__divider {
     border-bottom: 1px solid $secondary-cloud;
     margin-top: 2rem;
@@ -156,13 +220,17 @@
   &__btn-cancel {
     background-color: $primary-white;
     border-radius: 1.25rem;
-    border: $secondary-cloud;
+    border:1px solid $secondary-cloud;
     text-align: center;
     height: 2.25rem;
     width: 7.6875rem;
     @include tablet-and-desktop {
       width: 4.5rem;
       height: 2.375rem;
+    }
+    &:hover{
+      border:1px solid $primary-indigo;
+      color: $primary-indigo;
     }
   }
   &__btn-addItem {
@@ -177,6 +245,9 @@
       width: 6rem;
       height: 2.375rem;
       margin-left: 1rem;
+    }
+    &:hover{
+      background-color: $primary-black;
     }
   }
 }

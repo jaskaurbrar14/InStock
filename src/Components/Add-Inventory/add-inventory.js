@@ -3,7 +3,8 @@ import "./add-inventory.scss";
 import backarrow from "../../assets/Icons/arrow_back-24px.svg";
 import dropdown from "../../assets/Icons/arrow_drop_down-24px.svg";
 
-function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
+function AddInventory({ onClose}) {
+  const [inventory, setInventory] = useState([]);
   const [formData, setFormData] = useState({
     itemName: "",
     description: "",
@@ -21,28 +22,38 @@ function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
   };
 
   const handleStatusChange = (status) => {
-    setFormData({ ...formData, status, quantity: 0 });
+    setFormData({
+      ...formData,
+      status,
+      quantity: status === "Out of Stock" ? 0 : formData.quantity,
+    });
   };
-
-  const handleAddItem = (e) => {
-    e.preventDefault();
-
+  const validateForm = async () => {
     const validationErrors = {
       itemName: !formData.itemName.trim() ? "Item Name is required" : "",
-      description: !formData.description.trim() ? "Description is required" : "",
+      description: !formData.description.trim()
+        ? "Description is required"
+        : "",
       category: !formData.category.trim() ? "Category is required" : "",
       quantity:
         formData.status === "In Stock" && formData.quantity <= 0
           ? "Quantity must be greater than 0"
           : "",
+        warehouse: !formData.warehouse ? "Warehouse is required" : "",
     };
+    return validationErrors;
+  };
+  const handleAddItem = async (e) => {
+    e.preventDefault();
+
+    const validationErrors = await validateForm();
 
     if (Object.values(validationErrors).some((error) => !!error)) {
       setFormErrors(validationErrors);
       return;
     }
 
-    const newItem = { ...formData, id: Date.now() }; 
+    const newItem = { ...formData, id: Date.now() };
     setInventory([...inventory, newItem]);
 
     setFormData({
@@ -53,6 +64,7 @@ function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
       quantity: 0,
       warehouse: "",
     });
+    setFormErrors({});
     onClose();
   };
   return (
@@ -82,34 +94,41 @@ function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
                   <input
                     type="text"
                     placeholder="Item Name"
-                    className="addinventory__form-input"
+                    className="addinventory__form-input ${formErrors.itemName ? 'error' : ''}`}"
                     value={formData.itemName}
                     onChange={(e) =>
                       handleInputChange("itemName", e.target.value)
                     }
                   />
                   {formErrors.itemName && (
-                    <span className="addinventory__error-message">{formErrors.itemName}</span>
+                    <span className="addinventory__error-message">
+                      {formErrors.itemName}
+                    </span>
                   )}
                 </div>
                 <div>
                   <p className="addinventory__form-name">Description</p>
-                  <input
+                  <textarea
                     type="text"
                     placeholder="Please enter a brief item description..."
-                    className="addinventory__form-input-des"
+                    className="addinventory__form-input-des ${formErrors.description ? 'error' : ''}`}"
                     value={formData.description}
                     onChange={(e) =>
                       handleInputChange("description", e.target.value)
                     }
                   />
+                  {formErrors.description && (
+                    <span className="addinventory__error-message-description">
+                      {formErrors.description}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <p className="addinventory__form-name">Category</p>
                   <input
                     type="text"
                     placeholder="Item Name"
-                    className="addinventory__form-input"
+                    className="addinventory__form-category-name ${formErrors.category ? 'error' : ''}`}"
                     value={formData.category}
                     onChange={(e) =>
                       handleInputChange("category", e.target.value)
@@ -118,8 +137,13 @@ function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
                   <img
                     src={dropdown}
                     alt="dropdown-icon"
-                    className="addinventory__form-input-icon"
+                    className="addinventory__form-categoryinput-icon"
                   />
+                  {formErrors.category && (
+                    <span className="addinventory__error-message-category">
+                      {formErrors.category}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="editWarehouse__divider"></div>
@@ -137,6 +161,7 @@ function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
                         type="radio"
                         checked={formData.status === "In Stock"}
                         onChange={() => handleStatusChange("In Stock")}
+                        data-status="In Stock"
                       />
                       <span className="addinventory__form-radio">In stock</span>
                     </div>
@@ -146,6 +171,7 @@ function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
                         className="addinventory__form-radio"
                         checked={formData.status === "Out of Stock"}
                         onChange={() => handleStatusChange("Out of Stock")}
+                        data-status="Out of Stock"
                       />
                       <span className="addinventory__form-radio">
                         Out of stock
@@ -166,7 +192,7 @@ function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
                       }
                     />
                     {formErrors.quantity && (
-                      <span className="addinventory__error-message">
+                      <span className="addinventory__error-message-quantity">
                         {formErrors.quantity}
                       </span>
                     )}
@@ -177,7 +203,7 @@ function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
                   <input
                     type="text"
                     placeholder="Please select"
-                    className="addinventory__form-input"
+                    className="addinventory__form-category-name"
                     value={formData.warehouse}
                     onChange={(e) =>
                       handleInputChange("warehouse", e.target.value)
@@ -187,13 +213,21 @@ function AddInventory({ onClose, onAddItem, inventory, setInventory }) {
                     src={dropdown}
                     alt="dropdown-icon"
                     className="addinventory__form-input-icon-quality"
+                    data-status={formData.status}
                   />
+                  {formErrors.warehouse && (
+                    <span className="addinventory__error-message-warehouse">
+                      {formErrors.warehouse}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
             <div className="addinventory__btn-wrap">
               <div className="addinventory__btn-cancel-wrap">
-                <button className="addinventory__btn-cancel">Cancel</button>
+                <button className="addinventory__btn-cancel" onClick={onClose}>
+                  Cancel
+                </button>
               </div>
               <div className="addinventory__btn-addItem-wrap">
                 <button
