@@ -6,6 +6,9 @@ import {Link} from "react-router-dom";
 
 export default function InventoryList(){
 
+  const inventoryItems = [
+    { id: 1, name: 'Television', category: 'Electronics', isInStock: true, qty: 500, warehouse: 'Manhattan' },
+];
     // const getInventory = async () => {
     //     try {
     //         const response = await axios.get(`http://localhost:8080/inventories`);
@@ -32,6 +35,10 @@ return(
   </section>
 
   
+
+
+
+
 
   <div className="table__mobilecontainer">
     <section className="table__title--parent">
