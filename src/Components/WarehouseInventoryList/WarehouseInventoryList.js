@@ -21,19 +21,23 @@ export default function WarehouseInventoryList(){
 
 return(
 <main className="warehouseinventorylist">
-  <section className="header__headparent">
-    <img  className="header__backimage" src={arrowBackIcon} alt="arrow back icon" />
-    <h1 className="header__header">Washington</h1>
-    <button type="submit" className="header__editbutton">
-        <img className="header__editbutton--image" src={editIcon} alt="edit icon" />
-        <span className="header__editbutton--span">Edit</span>
+  <section className="warehouseheader__headparent">
+    <img  className="warehouseheader__backimage" src={arrowBackIcon} alt="arrow back icon" />
+    <h1 className="warehouseheader__header">Washington</h1>
+    <button type="submit" className="warehouseheader__editbuttonw">
+        <img className="warehouseheader__editbuttonw--image" src={editIcon} alt="edit icon" />
+        <span className="warehouseheader__editbuttonw--span">Edit</span>
     </button>
   </section>
 
     <section className="contactinfo__parent">
         <section className="contactinfo__subparent1">
             <p className="contactinfo__title">WAREHOUSE ADDRESS:</p>
-            <p className="contactinfo__data">33 Pearl Street SW, Washington, USA</p>
+            <p className="contactinfo__data">
+              33 Pearl Street SW, 
+              <br className="contactinfo__break"/>
+              Washington, USA
+            </p>
         </section>
         <section className="contactinfo__subparent">
             <section className="contactinfo">
@@ -84,10 +88,10 @@ return(
     </section>
     <section className="table__button">
         <button className="table__button--delete">
-          <img  className="table__button--deleteimg" src={deleteIcon} alt="delete icon"/>
+          <img src={deleteIcon} alt="delete icon"/>
         </button>
         <button className="table__button--edit">
-          <img className="table__button--editimg" src={editIcon} alt="edit icon"/>
+          <img src={editIcon} alt="edit icon"/>
         </button>
     </section>
   </div>
@@ -138,8 +142,7 @@ return(
     <th className="tabletablet__title--item">INVENTORY ITEM</th>
     <th className="tabletablet__title--item">CATEGORY</th>
     <th className="tabletablet__title--item">STATUS</th>
-    <th className="tabletablet__title--item">QTY</th>
-    <th className="tabletablet__title--item">WAREHOUSE</th>
+    <th className="tabletablet__title--item">QUANTITY</th>
     <th className="tabletablet__title--item1">ACTIONS</th>
   </tr>
 
@@ -152,7 +155,6 @@ return(
     </span>
     </td>
     <td className="tabletablet__data">500</td>
-    <td className="tabletablet__data">Manhattan</td>
     <td className="tabletablet__data">
       <section className="table__button">
           <button className="table__button--delete">
@@ -179,7 +181,6 @@ return(
       </span>
     </td>
     <td className="tabletablet__data">500</td>
-    <td className="tabletablet__data">Manhattan</td>
     <td className="tabletablet__data">
       <section className="table__button">
           <button className="table__button--delete">

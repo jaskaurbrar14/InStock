@@ -14,7 +14,7 @@
     margin-top: -3%;
     border-radius: 6px;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-    background-color: $background-lightgrey;
+    background-color: white;
     max-width: 94%;
     @include tablet-and-desktop{
         width: 95%;
@@ -23,26 +23,29 @@
         max-width: 78%;
     }
 }
-.header{
+.warehouseheader{
     &__backimage{
         padding-top: 0.5rem;
+        @include tablet-and-desktop{
+            padding-top: 1.5rem;
+        }
     }
     &__headparent{
         display: flex;
         flex-direction: row;
-        border-bottom: 2px solid $secondary-cloud;
+        border-bottom: 1px solid $secondary-cloud;
         padding-left: 1rem;
         padding-top: 1rem;
         @include tablet-and-desktop{
             display: flex;
             justify-content: left;
             flex-direction: row;
+            padding-left: 2rem;
+            padding-top: 0;
             gap: 0;
-            
-            // gap: 11rem;
         } 
         @include desktop{
-            gap: 33rem;
+
         } 
     }
     &__header{
@@ -55,27 +58,27 @@
             font-size: $tabdesk-header-fontsize;
             padding-top: 2rem;
             padding-right: 0;
-            padding-left: 2rem;
+            padding-left: 0.5rem;
         }
         @include desktop{
             font-size: $tabdesk-header-fontsize;
             padding-top: 2rem;
-            padding-left: 2rem;
+            padding-right: 17rem;
         }
     }
-    &__editbutton{
+    &__editbuttonw{
             margin-left: 1.5rem;
             border-radius: 50%;
             border: 1px solid $primary-indigo;
             background-color: $primary-indigo;
-            // color: $primary-white;
-            // padding: 0.5rem;
             width: 2rem;
             height: 2rem;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             @include tablet-and-desktop{
+                margin-left: 23rem;
                 border-radius: 25px;
                 width: 5.5rem;
+                height: 2.5rem;
             }
             &--span{
                 @include mobile{
@@ -84,29 +87,39 @@
                 @include tablet-and-desktop{
                     display: inline-block;
                     color: white;
+                    font-weight: $text-demi;
+                    padding-bottom: 0.5rem;
                 }
             }
             &--image{
+                filter: brightness(0) invert(1);
                 width: 20px;
                 padding-left: 1px;
                 padding-top: 2px;
-            }
-            @include tablet-and-desktop{
-                width: 9rem;
-                height: 2.5rem;
-                font-size: $tabdesk-labels-links-buttons-fontsize;
-            }
-            &--image{
-                filter: brightness(0) invert(1);
+                @include tablet-and-desktop{
+                    margin-top: -0.25rem;
+                    padding-top: 0.8rem;
+                }
             }
         }
 }
 .contactinfo{
+    &__break{
+        display: none;
+        @include tablet-and-desktop{
+            display: inline-flex;
+        }
+    }
     &__subparent1{
         @include tablet-and-desktop{
             border-right: 2px solid $secondary-cloud;
-            padding-right: 1rem;
+            padding-right: 8rem;
             margin-top: 1rem;
+        }
+        @include desktop{
+            border-right: 2px solid $secondary-cloud;
+            padding-right: 15rem;
+            margin-top: 2rem;
         }
     }
     &__parent{
@@ -115,8 +128,9 @@
         padding-left: 1rem;
         @include tablet-and-desktop{
             flex-direction: row;
-            gap: 9rem;
+            gap: 2rem;
             margin-bottom: 1rem;
+            padding-left: 2rem;
         }
     }
     &__subparent{
@@ -127,6 +141,13 @@
         padding-right: 1rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
+        @include tablet-and-desktop{
+            gap: 3rem;
+        }
+        @include desktop{
+            padding-top: 2rem;
+            gap: 7rem;
+        }
     }
     &__title{
         font-size: $mobile-table-header-fontsize;
@@ -134,7 +155,15 @@
         color: $secondary-slate;
         font-weight: $text-demi;
         margin-top: 1.25rem;
-    }&__data{
+        @include tablet-and-desktop{
+            font-size: 0.8rem;
+            line-height: $tabdesk-table-header-lineheight;
+        }
+        @include desktop{
+            margin-top: 0;
+        }
+    }
+    &__data{
         margin: 0;
         font-size: $mobile-p2-body-medium-fontsize;
     }
@@ -152,9 +181,6 @@
 .table{
     &__mobilecontainer{
         border-top: 2px solid $secondary-cloud;
-        &:hover{
-            background-color: $tablehover;
-        }
         @include tablet-and-desktop{
             display: none;
         }
@@ -195,15 +221,19 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 0.5rem 2rem 0 1rem;
-            &--delete, &--edit{
-                border: none;
+            padding: 0.5rem 2rem 1rem 1rem;
+            @include tablet-and-desktop{
+                justify-content: center;
             }
             @include desktop{
                 justify-content: flex-start;
                 gap: 1rem;
             }
-            &--deleteimg, &--editimg{
+            &--delete{
+                padding-right: 0.5rem;
+            }
+            &--delete, &--edit{
+                border: none;
                 background-color: white;
             }
         }
@@ -230,14 +260,10 @@
     border-collapse: collapse;
     &__row{
         border-bottom: 1px solid $secondary-cloud;
-        &:hover{
-            background-color: $tablehover;
-        }
     }
     &__title{
-        background-color: white;
+        background-color: $background-lightgrey;
         &--item{
-            // padding: 0.5rem 1rem;
             color: $secondary-slate;
             font-size: $tabdesk-labels-links-buttons-fontsize;
                 &::after {
@@ -249,6 +275,11 @@
                 background-image: url('../../assets/Icons/sort-24px.svg');
                 background-size: 100% 100%;
             }
+            @include tablet-and-desktop{
+                font-size: $tabdesk-table-header-fontsize;
+                padding-left: 0.5rem;
+                padding: 0.5rem;
+            }
             @include desktop{
                 width: 10rem;
             }
@@ -257,7 +288,11 @@
             // padding: 0.5rem 1rem;
             color: $secondary-slate;
             font-size: $tabdesk-labels-links-buttons-fontsize;
+            @include tablet-and-desktop{
+                font-size: $tabdesk-table-header-fontsize;
+            }
             @include desktop{
+                width: 10rem;
                 padding: 1rem 2rem;
             }
         }
@@ -265,8 +300,11 @@
     &__data{
         font-size: $tabdesk-p2-body-medium-fontsize;
         padding: 0.9rem 1rem;
+        @include tablet-and-desktop{
+            padding: 0.9rem 1rem 0.9rem 2rem;
+        }
         @include desktop{
-            padding: 1rem 2rem;
+            padding: 0 0 0 4rem;
         }
         &--product{
             padding-left: 1.5rem;
@@ -277,7 +315,8 @@
             content: " >";
             }
             @include tablet-and-desktop{
-                padding-left: 2.5rem;
+                padding-left: 2rem;
+                padding-top: 1.7rem;
             }
             @include desktop{
                 padding: 1rem 2rem;
