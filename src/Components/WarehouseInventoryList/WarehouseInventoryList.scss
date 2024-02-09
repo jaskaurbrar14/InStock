@@ -10,13 +10,17 @@
     padding: 0;
 }
 .warehouseinventorylist{
-    margin: 8% auto;
-    margin-top: -8%;
+    margin: auto;
+    margin-top: -3%;
     border-radius: 6px;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    background-color: $background-lightgrey;
+    max-width: 94%;
     @include tablet-and-desktop{
         width: 95%;
+    }
+    @include desktop{
+        max-width: 78%;
     }
 }
 .header{
@@ -45,7 +49,7 @@
         font-size: $mobile-header-fontsize;
         padding-top: 1rem;
         padding-left: 0.5rem;
-        padding-right: 16%;
+        padding-right: 11%;
         margin-bottom: 0.75rem;
         @include tablet-and-desktop{
             font-size: $tabdesk-header-fontsize;
