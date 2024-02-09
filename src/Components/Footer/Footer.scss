@@ -6,16 +6,17 @@
 .footer {
   text-align: center;
   margin-top: 2rem;
-  @include tablet-and-desktop {
-  }
-  @include desktop {
-  }
+  background-color: $background-lightgrey;
   &__tag {
+    color:$secondary-slate;
+    margin: 2.5rem 0;
     @include mobile-p3-body-small;
     color: $secondary-slate;
     @include tablet-and-desktop {
+      @include mobile-p2-body-medium;
     }
     @include desktop {
+      margin: 3rem 0;
     }
   }
 }
