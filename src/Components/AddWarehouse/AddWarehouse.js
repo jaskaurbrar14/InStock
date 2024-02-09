@@ -40,6 +40,21 @@ function AddWarehouse() {
       return;
     }
     console.log("Form submitted:", formData);
+    clearForm();
+  };
+  const clearForm = () => {
+    setFormData({
+      warehouseName: "",
+      streetAddress: "",
+      city: "",
+      country: "",
+      contactName: "",
+      position: "",
+      phoneNumber: "",
+      email: "",
+    });
+
+    setFormErrors({});
   };
 
   return (
