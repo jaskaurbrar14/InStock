@@ -10,3 +10,182 @@
   padding: 0;
   box-sizing: border-box;
 }
+.Inventory {
+  margin: 0 1rem;
+  border-radius: 0.25rem;
+  background-color: $primary-white;
+  box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
+  @include mobile-header;
+  color: $primary-black;
+  display: flex;
+  flex-direction: column;
+  @include tablet-and-desktop {
+    margin: 0 2rem;
+  }
+  @include desktop {
+    margin: 0 7rem;
+  }
+  &__header {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    &-backlink {
+      &-img {
+      }
+    }
+    &-heading {
+      @include mobile-header;
+      font-weight: $text-demi;
+      margin-left: 0.5rem;
+      @include tablet-and-desktop {
+        @include tabdesk-header;
+      }
+    }
+    &-editlink {
+      display: flex;
+      background-color: $primary-indigo;
+      margin-left: auto;
+      display: block;
+      border-radius: 50%;
+      &-img {
+        fill: $primary-white;
+      }
+      &-text {
+        color: $primary-white;
+
+        display: none;
+        @include tablet-and-desktop {
+          display: block;
+        }
+      }
+    }
+  }
+  &__divider {
+    border-bottom: 1px solid $secondary-cloud;
+    @include tablet-and-desktop {
+      border-left: 1px solid $secondary-cloud;
+      border-bottom: none;
+      text-align: center;
+    }
+  }
+  &__details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    &-description {
+      &-label {
+        @include mobile-table-header;
+        color: $secondary-slate;
+        text-transform: capitalize;
+        @include desktop {
+          @include tabdesk-table-header;
+        }
+      }
+
+      &-text {
+        @include mobile-p2-body-medium;
+        color: $primary-black;
+        @include desktop {
+          @include tabdesk-p2-body-medium;
+        }
+      }
+    }
+    &-category {
+      &-label {
+        @include mobile-table-header;
+        color: $secondary-slate;
+        text-transform: capitalize;
+        @include desktop {
+          @include tabdesk-table-header;
+        }
+      }
+
+      &-text {
+        @include mobile-p2-body-medium;
+        color: $primary-black;
+        @include desktop {
+          @include tabdesk-p2-body-medium;
+        }
+      }
+    }
+    &-divider {
+      display: none;
+      border-bottom: 1px solid $secondary-cloud;
+      @include tablet-and-desktop {
+        display: block;
+
+        border-left: 1px solid $secondary-cloud;
+        border-bottom: none;
+        text-align: center;
+      }
+    }
+  }
+
+  &__stock {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    &-status {
+      flex-grow: 1;
+      min-width: 0;
+      &-label {
+        @include mobile-table-header;
+        color: $secondary-slate;
+        text-transform: capitalize;
+        @include desktop {
+          @include tabdesk-table-header;
+        }
+      }
+
+      &-text {
+        @include mobile-p2-body-medium;
+        color: $primary-black;
+        @include desktop {
+          @include tabdesk-p2-body-medium;
+        }
+      }
+    }
+    &-quantity {
+      flex-grow: 1;
+      min-width: 0;
+      &-label {
+        @include mobile-table-header;
+        color: $secondary-slate;
+        text-transform: capitalize;
+        @include desktop {
+          @include tabdesk-table-header;
+        }
+      }
+
+      &-text {
+        @include mobile-p2-body-medium;
+        color: $primary-black;
+        @include desktop {
+          @include tabdesk-p2-body-medium;
+        }
+      }
+    }
+    &-warehouse {
+      flex-grow: 2;
+      min-width: 100%;
+
+      &-label {
+        @include mobile-table-header;
+        color: $secondary-slate;
+        text-transform: capitalize;
+        @include desktop {
+          @include tabdesk-table-header;
+        }
+      }
+
+      &-text {
+        @include mobile-p2-body-medium;
+        color: $primary-black;
+        @include desktop {
+          @include tabdesk-p2-body-medium;
+        }
+      }
+    }
+  }
+}
