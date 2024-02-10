@@ -4,7 +4,8 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import EditWarehouse from "./Components/Edit-warehouse/editWarehouse";
 import WarehouseList from "./Components/WarehouseList/WarehouseList";
-import WarehouseInventoryList from "./Components/WarehouseInventoryList/WarehouseInventoryList";
+import InventoryList from "./Components/InventoryList/InventoryList";
+// import WarehouseInventoryList from "./Components/WarehouseInventoryList/WarehouseInventoryList";
 
 function App() {
   return (
@@ -13,9 +14,11 @@ function App() {
       {/* <WarehouseList></WarehouseList> */}
       <main className="main">
         <Routes>
-          <Route element={<EditWarehouse />} />
+          <Route path="/" element={<WarehouseList />} />
           <Route path="/edit-warehouse" element={<EditWarehouse />} />
           <Route path="/warehouseinventorylist" element={<WarehouseInventoryList />} />
+          <Route path="/inventorylist" element={<InventoryList />} />
+          {/* <Route path="/warehouseinventorylist" element={<WarehouseInventoryList />} /> */}
         </Routes>
       </main>
       <Footer />
