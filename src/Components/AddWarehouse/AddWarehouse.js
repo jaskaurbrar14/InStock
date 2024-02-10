@@ -99,7 +99,7 @@ function AddWarehouse() {
               <button
                 type="button"
                 className="addWarehouse__btn-cancel"
-                //onClick={clearForm}
+                onClick={clearForm}
               >
                 Cancel
               </button>
