@@ -169,16 +169,6 @@
         font-size: $mobile-p2-body-medium-fontsize;
     }
 }
-
-
-
-
-
-
-
-
-
-
 .table{
     &__mobilecontainer{
         border-top: 2px solid $secondary-cloud;
@@ -186,13 +176,6 @@
             display: none;
         }
     }
-    // &__container{
-    //     padding-bottom: 1rem;
-    //     border-top: 2px solid $secondary-cloud;
-    //             @include tablet-and-desktop{
-    //         display: none;
-    //     }
-    // }
     &__detailparent{
             display: flex;
             flex-direction: row;
@@ -286,7 +269,6 @@
             }
         }
         &--item1{
-            // padding: 0.5rem 1rem;
             color: $secondary-slate;
             font-size: $tabdesk-labels-links-buttons-fontsize;
             @include tablet-and-desktop{

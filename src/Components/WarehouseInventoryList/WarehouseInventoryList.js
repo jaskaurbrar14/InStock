@@ -49,21 +49,21 @@ return(
             <div className="table__detailparent">
               <div className="table__wrapper">
                 <div className="table__detail">
-                  <label className="table__title">INVENTORY ITEM</label>
+                  <p className="table__title">INVENTORY ITEM</p>
                   <Link to="/inventorylist/:id"><p className="table__value--product">Television</p></Link>
                 </div>
                 <div className="table__detail">
-                  <label className="table__title">CATEGORY</label>
+                  <p className="table__title">CATEGORY</p>
                   <p className="table__value">Electronics</p>
                 </div>
               </div>
               <div className="table__wrapper">
                 <div className="table__detail">
-                  <label className="table__title">STATUS</label>
+                  <p className="table__title">STATUS</p>
                   <p className="table__value status1 status2">IN STOCK</p>
                 </div>
                 <div className="table__detail">
-                  <label className="table__title">QTY</label>
+                  <p className="table__title">QTY</p>
                   <p className="table__value">500</p>
                 </div>
               </div>
@@ -83,21 +83,21 @@ return(
             <div className="table__detailparent">
               <div className="table__wrapper">
                 <div className="table__detail">
-                  <label className="table__title">INVENTORY ITEM</label>
+                  <p className="table__title">INVENTORY ITEM</p>
                   <Link to="/inventorylist/:id"><p className="table__value--product">Television</p></Link>
                 </div>
                 <div className="table__detail">
-                  <label className="table__title">CATEGORY</label>
+                  <p className="table__title">CATEGORY</p>
                   <p className="table__value">Electronics</p>
                 </div>
               </div>
               <div className="table__wrapper">
                 <div className="table__detail">
-                  <label className="table__title">STATUS</label>
+                  <p className="table__title">STATUS</p>
                   <p className="table__value status1 status2">IN STOCK</p>
                 </div>
                 <div className="table__detail">
-                  <label className="table__title">QTY</label>
+                  <p className="table__title">QTY</p>
                   <p className="table__value">500</p>
                 </div>
               </div>
