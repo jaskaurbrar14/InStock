@@ -3,7 +3,7 @@ import "./add-inventory.scss";
 import backarrow from "../../assets/Icons/arrow_back-24px.svg";
 import dropdown from "../../assets/Icons/arrow_drop_down-24px.svg";
 
-function AddInventory({ onClose }) {
+function AddInventory({ onClose}) {
   const [inventory, setInventory] = useState([]);
   const [formData, setFormData] = useState({
     itemName: "",
@@ -39,7 +39,7 @@ function AddInventory({ onClose }) {
         formData.status === "In Stock" && formData.quantity <= 0
           ? "Quantity must be greater than 0"
           : "",
-      warehouse: !formData.warehouse ? "Warehouse is required" : "",
+        warehouse: !formData.warehouse ? "Warehouse is required" : "",
     };
     return validationErrors;
   };
@@ -203,15 +203,12 @@ function AddInventory({ onClose }) {
                   <input
                     type="text"
                     placeholder="Please select"
-                    className={`addinventory__form-category-name ${
-                      formErrors.warehouse ? "error" : ""
-                    }`}
+                    className="addinventory__form-category-name"
                     value={formData.warehouse}
                     onChange={(e) =>
                       handleInputChange("warehouse", e.target.value)
                     }
                   />
-
                   <img
                     src={dropdown}
                     alt="dropdown-icon"

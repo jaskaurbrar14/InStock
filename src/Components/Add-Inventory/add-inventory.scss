@@ -194,6 +194,12 @@
     left: 24rem;
     margin: 0;
     top: 68%;
+    @include tablet-and-desktop{
+
+    }
+    @include desktop{
+      
+    }
     &[data-status="Out of Stock"] {
       top: 48.5%;
     }
