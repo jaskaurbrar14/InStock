@@ -5,6 +5,8 @@
 
 .editWarehouse {
   margin: 0 1rem;
+  position: absolute;
+  top: 9rem;
   border-radius: 0.25rem;
   background-color: $primary-white;
   box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
@@ -12,9 +14,10 @@
   color: $primary-black;
   @include tablet-and-desktop {
     margin: 0 2rem;
+    top: 3.5rem;
   }
   @include desktop {
-    margin: 0 7rem;
+    margin: 0 8rem;
   }
   &__header-wrapper {
     border-bottom: 1px solid $secondary-cloud;
@@ -64,10 +67,10 @@
     padding: 0 1rem;
     @include mobile-labels-links-buttons;
     @include tablet-and-desktop {
+      width: 18rem;
     }
     @include desktop {
       width: 26.8125rem;
-      height: 2.375rem;
     }
   }
   &__divider {
@@ -133,7 +136,7 @@
     color: $supporting-red;
     font-size: $mobile-table-header-fontsize;
     position: absolute;
-    bottom: -2rem;
+    bottom: -1.5rem;
     left: 0.9rem;
     margin: 0;
   }
