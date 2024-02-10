@@ -1,0 +1,90 @@
+@use "../../Style/Partials/global" as *;
+@use "../../Style/Partials/mixins" as *;
+@use "../../Style/Partials/variable" as *;
+@use "../../Style/Partials/typography" as *;
+
+.header {
+  background-color: $background-graphite;
+  height: 10rem;
+  display: flex;
+  padding-bottom: 4rem;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    @include tablet-and-desktop {
+      padding-bottom: 5.8rem;
+      margin: 1rem;
+      height: 5rem;
+      flex-direction: row;
+    }
+  }
+
+  &__logo {
+    margin-top: 1rem;
+    @include tablet-and-desktop {
+      margin: 2rem;
+      margin-left: 5rem;
+    }
+  }
+
+  &__image {
+    margin-top: 1.5rem;
+
+    @include tablet-and-desktop {
+      margin-top: 0.7rem;
+    }
+  }
+
+  &__navlinks {
+    margin: 0;
+    width: 100%;
+
+    @include tablet-and-desktop {
+      width: 28%;
+      margin-right: 10rem;
+    }
+
+    @include desktop {
+      width: 25%;
+    }
+  }
+
+  &__navitems {
+    display: flex;
+    justify-content: space-evenly;
+
+    @include tablet-and-desktop {
+      width: 100%;
+      margin: 1rem 0 0 0;
+      gap: 0.1rem;
+    }
+  }
+
+  &__warehouses,
+  &__inventory {
+    text-align: center;
+    color: $primary-white;
+    width: 50%;
+    padding: 1rem 2rem;
+
+    @include tablet-and-desktop {
+      width: 30%;
+      margin: 0;
+      margin-right: 0.5rem;
+      padding: 1rem 2rem;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__warehouses {
+    background-color: $primary-black;
+    border-radius: 15rem;
+  }
+}

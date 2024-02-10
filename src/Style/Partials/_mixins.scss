@@ -24,14 +24,14 @@
   line-height: $mobile-labels-links-buttons-lineheight;
 }
 
-@mixin mobile-table-header{
+@mixin mobile-table-header {
   font-size: $mobile-table-header-fontsize;
   line-height: $mobile-table-header-lineheight;
 }
 
-@mixin mobilep1-body-large {
-  font-size: $mobilep1-body-large-fontsize;
-  line-height: $mobilep1-body-large-lineheight;
+@mixin mobile-p1-body-large {
+  font-size: $mobile-p1-body-large-fontsize;
+  line-height: $mobile-p1-body-large-lineheight;
 }
 @mixin mobile-p2-body-medium {
   font-size: $mobile-p2-body-medium-fontsize;
@@ -56,7 +56,7 @@
   line-height: $tabdesk-labels-links-buttons-lineheight;
 }
 
-@mixin tabdesk-table-header{
+@mixin tabdesk-table-header {
   font-size: $tabdesk-table-header-fontsize;
   line-height: $tabdesk-table-header-lineheight;
 }

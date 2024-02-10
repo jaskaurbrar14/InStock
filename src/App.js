@@ -3,6 +3,7 @@ import "./App.scss";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import EditWarehouse from "./Components/Edit-warehouse/editWarehouse";
+import WarehouseList from "./Components/WarehouseList/WarehouseList";
 
 function App() {
   return (
@@ -10,12 +11,13 @@ function App() {
       <Header />
       <main className="main">
         <Routes>
-        <Route path="/edit-warehouse" element={<EditWarehouse />} />
+          <Route path="/" element={<WarehouseList />} />
+          <Route path="/edit-warehouse" element={<EditWarehouse />} />
         </Routes>
       </main>
       <Footer />
     </BrowserRouter>
-  )
-};
+  );
+}
 
 export default App;
