@@ -44,9 +44,6 @@
             padding-top: 0;
             gap: 0;
         } 
-        @include desktop{
-
-        } 
     }
     &__header{
         font-size: $mobile-header-fontsize;
