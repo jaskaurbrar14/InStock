@@ -2,25 +2,8 @@ import "./InventoryList.scss";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg"
 import editIcon from "../../assets/Icons/edit-24px.svg"
 import {Link} from "react-router-dom";
-// import { useState, useEffect } from "react";
 
 export default function InventoryList(){
-
-  const inventoryItems = [
-    { id: 1, name: 'Television', category: 'Electronics', isInStock: true, qty: 500, warehouse: 'Manhattan' },
-];
-    // const getInventory = async () => {
-    //     try {
-    //         const response = await axios.get(`http://localhost:8080/inventories`);
-    //         setVideos(response.data);
-    //     } catch (error) {
-    //         console.error("error:", error);
-    //     }
-    // };
-    // useEffect(()=>{
-    //     getInventory();
-    //   },[]);
-
 
 return(
 <main className="inventorylist">
@@ -33,13 +16,6 @@ return(
         <button type="submit" className="header__form--additembutton">+ Add New Item</button>
     </section>
   </section>
-
-  
-
-
-
-
-
   <div className="table__mobilecontainer">
     <section className="table__title--parent">
             <div className="table__detailparent">
@@ -53,7 +29,6 @@ return(
                   <p className="table__value">Electronics</p>
                 </div>
               </div>
-
               <div className="table__wrapper">
                 <div className="table__detail">
                   <label className="table__title">STATUS</label>
@@ -79,7 +54,6 @@ return(
         </button>
     </section>
   </div>
-
   <div className="table__mobilecontainer">
     <section className="table__title--parent">
             <div className="table__detailparent">
@@ -93,7 +67,6 @@ return(
                   <p className="table__value">Electronics</p>
                 </div>
               </div>
-
               <div className="table__wrapper">
                 <div className="table__detail">
                   <label className="table__title">STATUS</label>
@@ -119,12 +92,6 @@ return(
         </button>
     </section>
   </div>
-
-
-
-
-
-
   <table className="tabletablet">
   <tr className="tabletablet__title">
     <th className="tabletablet__title--item">INVENTORY ITEM</th>
@@ -134,7 +101,6 @@ return(
     <th className="tabletablet__title--item">WAREHOUSE</th>
     <th className="tabletablet__title--item1">ACTIONS</th>
   </tr>
-
   <tr className="tabletablet__row">
   <Link to="/inventorylist/:id"><td className="tabletablet__data--product">Television</td></Link>
     <td className="tabletablet__data">Electronics</td>
@@ -156,12 +122,6 @@ return(
       </section>
     </td>
   </tr>
-
-
-
-
-
-  
   <tr className="tabletablet__row">
   <Link to="/inventorylist/:id"><td className="tabletablet__data--product">Television</td></Link>
     <td className="tabletablet__data">Electronics</td>
@@ -183,10 +143,6 @@ return(
       </section>
     </td>
   </tr>
-
-
-
-
 </table>
 </main>
     );
