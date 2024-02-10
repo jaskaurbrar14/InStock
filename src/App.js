@@ -11,10 +11,9 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      {/* <WarehouseList></WarehouseList> */}
       <main className="main">
         <Routes>
-          <Route element={<EditWarehouse />} />
+          <Route path="/" element={<WarehouseList />} />
           <Route path="/edit-warehouse" element={<EditWarehouse />} />
           <Route path="/inventorylist" element={<InventoryList />} />
           {/* <Route path="/warehouseinventorylist" element={<WarehouseInventoryList />} /> */}
