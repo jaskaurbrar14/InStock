@@ -1,7 +1,7 @@
 @use "./variable" as *;
 
 @mixin mobile {
-  @media screen and (max-width: $mobile-breakpoint) {
+  @media screen and (max-width: $tablet-breakpoint) {
     @content;
   }
 }
