@@ -26,6 +26,8 @@
 .header{
     &__headparent{
         @include tablet-and-desktop{
+            justify-content: space-between;
+            padding-right: 2rem;
             display: flex;
             flex-direction: row;
             gap: 8.5rem;
@@ -145,7 +147,9 @@
     &__value{
         margin: 0;
         font-size: $mobile-p2-body-medium-fontsize;
+        padding-bottom: 1rem;
         &--product{
+            padding-bottom: 1rem;
             color: $primary-indigo;
             font-weight: $text-demi;
             margin: 0;
@@ -159,7 +163,6 @@
             flex-direction: row;
             justify-content: space-between;
             padding: 0.5rem 2rem 1rem 1rem;
-
             @include desktop{
                 justify-content: flex-start;
                 gap: 1rem;
@@ -176,6 +179,7 @@
     color: $supporting-red;
     font-weight: $text-demi;
     padding: 0.25rem 0.5rem;
+    margin-bottom: 1rem;
     border-radius: 20px;
     background-color: #fbf2ee;
 }
@@ -183,6 +187,7 @@
         color: $supporting-green;
         font-weight: $text-demi;
         padding: 0.25rem 0.5rem;
+        margin-bottom: 1rem;
         border-radius: 20px;
         background-color: #eef6f4;
 }
