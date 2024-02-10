@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./editWarehouse.scss";
-import backarrow from "../../assets/Icons/arrow_back-24px.svg";
+import backarrow from "../../Assets/Icons/arrow_back-24px.svg";
 
 function EditWarehouse() {
   const [formData, setFormData] = useState({
