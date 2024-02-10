@@ -72,7 +72,6 @@
     height: 2.25rem;
     width: 12.4375rem;
     padding: 0 1rem;
-    // position: relative;
     @include mobile-labels-links-buttons;
     @include tablet-and-desktop {
       width: 18rem;
@@ -136,7 +135,6 @@
   }
   &__form-input-icon-quality {
     position: absolute;
-    // top: 87%;
     right: 3rem;
     pointer-events: none;
     @include tablet-and-desktop {
@@ -195,6 +193,13 @@
     position: absolute;
     left: 24rem;
     margin: 0;
+    top: 68%;
+    &[data-status="Out of Stock"] {
+      top: 48.5%;
+    }
+    &.out-of-stock {
+      top: 6.5rem; 
+    }
   }
   
   &__divider {

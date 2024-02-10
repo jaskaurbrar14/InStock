@@ -203,7 +203,7 @@ function AddInventory({ onClose}) {
                   <input
                     type="text"
                     placeholder="Please select"
-                    className="addinventory__form-category-name"
+                    className={`addinventory__form-category-name ${errorWarehouseClassName}`}
                     value={formData.warehouse}
                     onChange={(e) =>
                       handleInputChange("warehouse", e.target.value)
