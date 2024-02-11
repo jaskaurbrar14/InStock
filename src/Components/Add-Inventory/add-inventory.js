@@ -21,7 +21,7 @@ function AddInventory() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/warehouses")
+    .get("http://localhost:3000/warehouse/api/warehouses/")
       .then((response) => {
         setWarehouses(response.data);
       })
@@ -85,7 +85,7 @@ function AddInventory() {
         newInventory.quantity = 0;
       }
 
-      await axios.post("http://localhost:8080/api/inventories", newInventory);
+      await axios.post("http://localhost:3000/api/inventories", newInventory);
       navigate("/inventories");
     } catch (error) {
       console.error("Error adding inventory:", error);
