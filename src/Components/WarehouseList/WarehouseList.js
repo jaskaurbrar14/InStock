@@ -36,12 +36,6 @@ function WarehouseList() {
     fetchWarehouses();
   }, []);
 
-  // if (!warehouses) {
-  //   <div>
-  //     Loading list of warehouses ...
-  //   </div>
-  // }
-
   return (
     <div className="warehouselist">
       <div className="warehouselist__header">
