@@ -26,11 +26,6 @@ function WarehouseList() {
         </div>
         <div className="warehouselist__header__search">
           <input placeholder="Search..." name="search" type="input"></input>
-          <img
-            className="warehouselist__header__search__icon"
-            src={searchIcon}
-            alt="search icon"
-          />
         </div>
         <div className="warehouselist__header__addbutton">
           <button>+ Add new Warehouse</button>
