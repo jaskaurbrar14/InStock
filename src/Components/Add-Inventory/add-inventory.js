@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import backarrow from "../../Assets/Icons/arrow_back-24px.svg";
 import ErrorIcon from "../../Assets/Icons/error-24px.svg";
 
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 function AddInventory() {
   const navigate = useNavigate();
   const [warehouses, setWarehouses] = useState([]);
@@ -21,7 +23,7 @@ function AddInventory() {
 
   useEffect(() => {
     axios
-    .post("http://localhost:5050/warehouses/api/inventories")
+    .post(`${REACT_APP_SERVER_URL}/warehouses/api/inventories`)
       .then((response) => {
         setWarehouses(response.data);
       })
