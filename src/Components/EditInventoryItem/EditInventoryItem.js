@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./add-inventory.scss";
+import "./EditInventoryItem.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import backarrow from "../../assets/Icons/arrow_back-24px.svg";
@@ -156,33 +156,33 @@ function AddInventory() {
     }
   };
   return (
-    <section className="addinventory">
-      <div className="addinventory__wrap">
-        <div className="addinventory__header-wrap">
-          <div className="addinventory__icon-wrap">
+    <section className="editinventory">
+      <div className="editinventory__wrap">
+        <div className="editinventory__header-wrap">
+          <div className="editinventory__icon-wrap">
             <img
               src={backarrow}
               alt="back arrow icon"
-              className="addinventory__header-icon"
+              className="editinventory__header-icon"
             />
           </div>
-          <div className="addinventory__title-wrap">
-            <h1 className="addinventory__title">Add New Inventory Item</h1>
+          <div className="editinventory__title-wrap">
+            <h1 className="editinventory__title">Edit Inventory Item</h1>
           </div>
         </div>
         <div>
-          <form action="" className="addinventory__detail-form">
-            <div className="addinventory__detail-form-container">
-              <div className="addinventory__detail">
-                <div className="addinventory__form-header-wrap">
-                  <h2 className="addinventory__form-header">Item Details</h2>
+          <form action="" className="editinventory__detail-form">
+            <div className="editinventory__detail-form-container">
+              <div className="editinventory__detail">
+                <div className="editinventory__form-header-wrap">
+                  <h2 className="editinventory__form-header">Item Details</h2>
                 </div>
-                <div className="addinventory__form-detail">
-                  <p className="addinventory__form-name">Item Name</p>
+                <div className="editinventory__form-detail">
+                  <p className="editinventory__form-name">Item Name</p>
                   <input
                     type="text"
                     placeholder="Item Name"
-                    className="addinventory__form-input ${formErrors.itemName ? 'error' : ''}`}"
+                    className="editinventory__form-input ${formErrors.itemName ? 'error' : ''}`}"
                     value={formData.item_name}
                     onChange={(e) =>
                       handleInputChange("itemName", e.target.value)
@@ -196,11 +196,11 @@ function AddInventory() {
                   )}
                 </div>
                 <div>
-                  <p className="addinventory__form-name">Description</p>
+                  <p className="editinventory__form-name">Description</p>
                   <textarea
                     type="text"
                     placeholder="Please enter a brief item description..."
-                    className="addinventory__form-input-des ${formErrors.description ? 'error' : ''}`}"
+                    className="editinventory__form-input-des ${formErrors.description ? 'error' : ''}`}"
                     rows={5}
                     name="description"
                     value={formData.description}
@@ -209,17 +209,17 @@ function AddInventory() {
                     }
                   />
                   {formErrors.description && (
-                    <span className="addinventory__error-message-description">
+                    <span className="editinventory__error-message-description">
                       {formErrors.description}
                     </span>
                   )}
                 </div>
                 <div>
-                  <p className="addinventory__form-name">Category</p>
+                  <p className="editinventory__form-name">Category</p>
                   <input
                     type="text"
                     placeholder="Item Name"
-                    className="addinventory__form-category-name ${formErrors.category ? 'error' : ''}`}"
+                    className="editinventory__form-category-name ${formErrors.category ? 'error' : ''}`}"
                     value={formData.category}
                     onChange={(e) =>
                       handleInputChange("category", e.target.value)
@@ -228,25 +228,25 @@ function AddInventory() {
                   <img
                     src={dropdown}
                     alt="dropdown-icon"
-                    className="addinventory__form-categoryinput-icon"
+                    className="editinventory__form-categoryinput-icon"
                   />
                   {formErrors.category && (
-                    <span className="addinventory__error-message-category">
+                    <span className="editinventory__error-message-category">
                       {formErrors.category}
                     </span>
                   )}
                 </div>
               </div>
               <div className="editWarehouse__divider"></div>
-              <div className="addinventory__detail">
-                <div className="addinventory__form-header-wrap">
-                  <h2 className="addinventory__form-header">
+              <div className="editinventory__detail">
+                <div className="editinventory__form-header-wrap">
+                  <h2 className="editinventory__form-header">
                     Item Availability
                   </h2>
                 </div>
                 <div>
-                  <p className="addinventory__form-name">Status</p>
-                  <div className="addinventory__form-radio-wrap">
+                  <p className="editinventory__form-name">Status</p>
+                  <div className="editinventory__form-radio-wrap">
                     <div>
                       <input
                         type="radio"
@@ -254,47 +254,28 @@ function AddInventory() {
                         onChange={() => handleStatusChange("In Stock")}
                         data-status="In Stock"
                       />
-                      <span className="addinventory__form-radio">In stock</span>
+                      <span className="editinventory__form-radio">In stock</span>
                     </div>
                     <div>
                       <input
                         type="radio"
-                        className="addinventory__form-radio"
+                        className="editinventory__form-radio"
                         checked={formData.status === "Out of Stock"}
                         onChange={() => handleStatusChange("Out of Stock")}
                         data-status="Out of Stock"
                       />
-                      <span className="addinventory__form-radio">
+                      <span className="editinventory__form-radio">
                         Out of stock
                       </span>
                     </div>
                   </div>
                 </div>
-                {formData.status === "In Stock" && (
-                  <div className="addinventory__form-name-quantity">
-                    <p className="addinventory__form-name">Quantity</p>
-                    <input
-                      type="number"
-                      placeholder="0"
-                      className="addinventory__form-input"
-                      value={formData.quantity}
-                      onChange={(e) =>
-                        handleInputChange("quantity", e.target.value)
-                      }
-                    />
-                    {formErrors.quantity && (
-                      <span className="addinventory__error-message-quantity">
-                        {formErrors.quantity}
-                      </span>
-                    )}
-                  </div>
-                )}
                 <div>
-                  <p className="addinventory__form-name">Warehouse</p>
+                  <p className="editinventory__form-name">Warehouse</p>
                   <input
                     type="text"
                     placeholder="Please select"
-                    className="addinventory__form-category-name"
+                    className="editinventory__form-category-name"
                     value={formData.warehouse}
                     onChange={(e) =>
                       handleInputChange("warehouse", e.target.value)
@@ -303,29 +284,29 @@ function AddInventory() {
                   <img
                     src={dropdown}
                     alt="dropdown-icon"
-                    className="addinventory__form-input-icon-quality"
+                    className="editinventory__form-input-icon-quality"
                     data-status={formData.status}
                   />
                   {formErrors.warehouse && (
-                    <span className="addinventory__error-message-warehouse">
+                    <span className="editinventory__error-message-warehouse">
                       {formErrors.warehouse}
                     </span>
                   )}
                 </div>
               </div>
             </div>
-            <div className="addinventory__btn-wrap">
-              <div className="addinventory__btn-cancel-wrap">
-                <button className="addinventory__btn-cancel" onClick={handleCancel}>
+            <div className="editinventory__btn-wrap">
+              <div className="editinventory__btn-cancel-wrap">
+                <button className="editinventory__btn-cancel" onClick={handleCancel}>
                   Cancel
                 </button>
               </div>
-              <div className="addinventory__btn-addItem-wrap">
+              <div className="editinventory__btn-addItem-wrap">
                 <button
-                  className="addinventory__btn-addItem"
+                  className="editinventory__btn-addItem"
                   onClick={handleSave}
                 >
-                  + Add Item
+                  Save
                 </button>
               </div>
             </div>
