@@ -83,6 +83,14 @@
       border: 1px solid $primary-indigo !important;
     }
   }
+  &__dropdown{
+    width: 100%;
+    height: 2.375rem;
+    padding-left: 1rem;
+    border-radius: 1.25rem;
+    border: 1px solid $secondary-cloud;
+    outline-color: $primary-indigo;
+  }
   &__form-input-des {
     border-radius: 1.25rem;
     border: 1px solid $secondary-cloud;
@@ -103,7 +111,7 @@
   }
   &__form-name-quantity {
     @include desktop {
-      display: none;
+     
     }
   }
   &__form-category-name{
@@ -194,12 +202,6 @@
     left: 24rem;
     margin: 0;
     top: 68%;
-    @include tablet-and-desktop{
-
-    }
-    @include desktop{
-      
-    }
     &[data-status="Out of Stock"] {
       top: 48.5%;
     }
@@ -260,5 +262,43 @@
     &:hover{
       background-color: $primary-black;
     }
+  }
+  &__error {
+    color: $supporting-red;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    margin-top: -0.9rem;
+  }
+  .error-outline {
+    border: $supporting-red;
+  }
+  
+  .error-icon {
+    width: .9rem;
+    height: .9rem;
+  }
+  
+  .dropdown-container {
+    .arrow-icon {
+      position: absolute;
+      right: 10px;
+      top: 40%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+  }
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 1rem;
+    background-image: url("../../assets/Icons/arrow_drop_down-24px.svg");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+    margin-bottom: 1rem;
   }
 }
