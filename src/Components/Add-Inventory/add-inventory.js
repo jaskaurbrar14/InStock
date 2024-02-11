@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import "./add-inventory.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import backarrow from "../../assets/Icons/arrow_back-24px.svg";
-import ErrorIcon from "../../assets/Icons/error-24px.svg";
+import backarrow from "../../Assets/Icons/arrow_back-24px.svg";
+import ErrorIcon from "../../Assets/Icons/error-24px.svg";
 
 function AddInventory() {
   const navigate = useNavigate();

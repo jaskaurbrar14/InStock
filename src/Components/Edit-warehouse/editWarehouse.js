@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 import "./editWarehouse.scss";
-import backarrow from "../../assets/Icons/arrow_back-24px.svg";
+import backarrow from "../../Assets/Icons/arrow_back-24px.svg";
 
 function EditWarehouse() {
-    const [formData, setFormData] = useState({
-        warehouseName: "",
-        streetAddress: "",
-        city: "",
-        country: "",
-        contactName: "",
-        position: "",
-        phoneNumber: "",
-        email: "",
-      });
+  const [formData, setFormData] = useState({
+    warehouseName: "",
+    streetAddress: "",
+    city: "",
+    country: "",
+    contactName: "",
+    position: "",
+    phoneNumber: "",
+    email: "",
+  });
 
-      const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState({});
 
-      const handleInputChange = (field, value) => {
-        setFormData({ ...formData, [field]: value });
-        setFormErrors({ ...formErrors, [field]: "" });
-      };
+  const handleInputChange = (field, value) => {
+    setFormData({ ...formData, [field]: value });
+    setFormErrors({ ...formErrors, [field]: "" });
+  };
 
-      const handleSubmit = (e) => {
-        e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        const validationErrors = {};
+    const validationErrors = {};
 
     for (const field in formData) {
       if (!formData[field].trim()) {
@@ -32,43 +32,40 @@ function EditWarehouse() {
       }
     }
     if (
-        formData.phoneNumber &&
-        !/^(\+\d{1,2}\s?)?(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$/.test(
-          formData.phoneNumber
-        )
-      ) {
-        validationErrors.phoneNumber = "Invalid phone number";
-      }
-  
-      if (
-        formData.email &&
-        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
-      ) {
-        validationErrors.email = "Invalid email address";
-      }
-  
-      if (Object.keys(validationErrors).length > 0) {
-        setFormErrors(validationErrors);
-        return;
-      }
-      console.log("Form submitted:", formData);
-      clearForm();
-    };
-    const clearForm = () => {
-      setFormData({
-        warehouseName: "",
-        streetAddress: "",
-        city: "",
-        country: "",
-        contactName: "",
-        position: "",
-        phoneNumber: "",
-        email: "",
-      });
-  
-      setFormErrors({});
-    };
-    
+      formData.phoneNumber &&
+      !/^(\+\d{1,2}\s?)?(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$/.test(
+        formData.phoneNumber
+      )
+    ) {
+      validationErrors.phoneNumber = "Invalid phone number";
+    }
+
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      validationErrors.email = "Invalid email address";
+    }
+
+    if (Object.keys(validationErrors).length > 0) {
+      setFormErrors(validationErrors);
+      return;
+    }
+    console.log("Form submitted:", formData);
+    clearForm();
+  };
+  const clearForm = () => {
+    setFormData({
+      warehouseName: "",
+      streetAddress: "",
+      city: "",
+      country: "",
+      contactName: "",
+      position: "",
+      phoneNumber: "",
+      email: "",
+    });
+
+    setFormErrors({});
+  };
+
   return (
     <section className="editWarehouse">
       <div className="editWarehouse__container">
@@ -88,10 +85,16 @@ function EditWarehouse() {
           <div className="editWarehouse__detail-form-wrap">
             <div className="editWarehouse__detail">
               <div className="editWarehouse__form-header-wrap">
-                <h2 className="editWarehouse__form-header">Warehouse Details</h2>
+                <h2 className="editWarehouse__form-header">
+                  Warehouse Details
+                </h2>
               </div>
               {renderInput("warehouseName", "Warehouse Name", "Washington")}
-              {renderInput("streetAddress", "Street Address", "33 Pearl Street SW")}
+              {renderInput(
+                "streetAddress",
+                "Street Address",
+                "33 Pearl Street SW"
+              )}
               {renderInput("city", "City", "Washington")}
               {renderInput("country", "Country", "USA")}
             </div>
@@ -108,7 +111,11 @@ function EditWarehouse() {
           </div>
           <div className="editWarehouse__btn-wrap">
             <div className="editWarehouse__btn-cancel-wrap">
-              <button type="button" className="editWarehouse__btn-cancel" onClick={clearForm}>
+              <button
+                type="button"
+                className="editWarehouse__btn-cancel"
+                onClick={clearForm}
+              >
                 Cancel
               </button>
             </div>
@@ -134,11 +141,14 @@ function EditWarehouse() {
           value={formData[field]}
           onChange={(e) => handleInputChange(field, e.target.value)}
         />
-        {formErrors[field] && <span className="editWarehouse__error-message">{formErrors[field]}</span>}
+        {formErrors[field] && (
+          <span className="editWarehouse__error-message">
+            {formErrors[field]}
+          </span>
+        )}
       </div>
     );
   }
 }
 
 export default EditWarehouse;
-
