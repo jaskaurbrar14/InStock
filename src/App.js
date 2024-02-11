@@ -10,7 +10,6 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      {/* <WarehouseList></WarehouseList> */}
       <main className="main">
         <Routes>
           <Route path="/" element={<WarehouseList />} />

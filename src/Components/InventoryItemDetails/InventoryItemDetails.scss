@@ -11,16 +11,19 @@
   box-sizing: border-box;
 }
 .Inventory {
+  position: absolute;
+  width: 100%;
+  top: 8.5rem;
   margin: 0 1rem;
   border-radius: 0.25rem;
   background-color: $primary-white;
   box-shadow: 0 2px 5px 0 rgba(19, 24, 44, 0.1);
   @include mobile-header;
-  color: $primary-black;
   display: flex;
   flex-direction: column;
   @include tablet-and-desktop {
     margin: 0 2rem;
+    top: 5.75rem;
   }
   @include desktop {
     margin: 0 7rem;
@@ -29,32 +32,51 @@
     display: flex;
     gap: 1rem;
     padding: 1.5rem;
-    &-backlink {
-      &-img {
-      }
+
+    @include tablet-and-desktop {
+      padding: 2rem;
+      gap: 1.5rem;
     }
+
     &-heading {
       @include mobile-header;
+      color: $primary-black;
+
       font-weight: $text-demi;
-      margin-left: 0.5rem;
       @include tablet-and-desktop {
         @include tabdesk-header;
       }
     }
     &-editlink {
-      display: flex;
       background-color: $primary-indigo;
       margin-left: auto;
       display: block;
+      width: 2.25rem;
+      height: 2.25rem;
       border-radius: 50%;
+
+      @include tablet-and-desktop {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border-radius: 1.25rem;
+        width: auto;
+        height: auto;
+      }
+
       &-img {
-        fill: $primary-white;
+        padding: 6px;
+        @include tablet-and-desktop {
+          padding: 0;
+        }
       }
       &-text {
         color: $primary-white;
-
+        @include mobile-labels-links-buttons;
         display: none;
         @include tablet-and-desktop {
+          @include tabdesk-labels-links-buttons;
           display: block;
         }
       }
@@ -73,39 +95,51 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    &-description {
-      &-label {
-        @include mobile-table-header;
-        color: $secondary-slate;
-        text-transform: capitalize;
-        @include desktop {
-          @include tabdesk-table-header;
-        }
-      }
+    @include tablet-and-desktop {
+      padding: 2rem;
 
-      &-text {
-        @include mobile-p2-body-medium;
-        color: $primary-black;
-        @include desktop {
-          @include tabdesk-p2-body-medium;
-        }
-      }
+      flex-direction: row;
+      gap: 2rem;
     }
-    &-category {
-      &-label {
-        @include mobile-table-header;
-        color: $secondary-slate;
-        text-transform: capitalize;
-        @include desktop {
-          @include tabdesk-table-header;
+    &-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      &-description {
+        &-label {
+          @include mobile-table-header;
+          color: $secondary-slate;
+          text-transform: capitalize;
+          @include desktop {
+            @include tabdesk-table-header;
+          }
+        }
+
+        &-text {
+          @include mobile-p2-body-medium;
+          color: $primary-black;
+          @include desktop {
+            @include tabdesk-p2-body-medium;
+          }
         }
       }
+      &-category {
+        &-label {
+          @include mobile-table-header;
+          color: $secondary-slate;
+          text-transform: capitalize;
+          @include desktop {
+            @include tabdesk-table-header;
+          }
+        }
 
-      &-text {
-        @include mobile-p2-body-medium;
-        color: $primary-black;
-        @include desktop {
-          @include tabdesk-p2-body-medium;
+        &-text {
+          @include mobile-p2-body-medium;
+          color: $primary-black;
+          @include desktop {
+            @include tabdesk-p2-body-medium;
+          }
         }
       }
     }
@@ -120,70 +154,83 @@
         text-align: center;
       }
     }
-  }
+    &-stock {
+      flex: 1;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      &-status {
+        flex-grow: 1;
+        min-width: 0;
+        &-label {
+          @include mobile-table-header;
+          color: $secondary-slate;
+          text-transform: capitalize;
+          @include desktop {
+            @include tabdesk-table-header;
+          }
+        }
 
-  &__stock {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    &-status {
-      flex-grow: 1;
-      min-width: 0;
-      &-label {
-        @include mobile-table-header;
-        color: $secondary-slate;
-        text-transform: capitalize;
-        @include desktop {
-          @include tabdesk-table-header;
+        &-text {
+          @include mobile-p2-body-medium;
+          color: $primary-black;
+          width: fit-content;
+          padding: 0rem 0.5rem;
+          border-radius: 1.25rem;
+          @include desktop {
+            padding: 0.25rem 1rem;
+
+            @include tabdesk-p2-body-medium;
+          }
+          &--red {
+            color: $supporting-red;
+            background-color: #c9451526;
+          }
+          &--green {
+            color: $supporting-green;
+            background-color: #1584632c;
+          }
         }
       }
+      &-quantity {
+        flex-grow: 1;
+        min-width: 0;
+        &-label {
+          @include mobile-table-header;
+          color: $secondary-slate;
+          text-transform: capitalize;
+          @include desktop {
+            @include tabdesk-table-header;
+          }
+        }
 
-      &-text {
-        @include mobile-p2-body-medium;
-        color: $primary-black;
-        @include desktop {
-          @include tabdesk-p2-body-medium;
+        &-text {
+          @include mobile-p2-body-medium;
+          color: $primary-black;
+          @include desktop {
+            @include tabdesk-p2-body-medium;
+          }
         }
       }
-    }
-    &-quantity {
-      flex-grow: 1;
-      min-width: 0;
-      &-label {
-        @include mobile-table-header;
-        color: $secondary-slate;
-        text-transform: capitalize;
-        @include desktop {
-          @include tabdesk-table-header;
-        }
-      }
+      &-warehouse {
+        flex-grow: 2;
+        min-width: 100%;
 
-      &-text {
-        @include mobile-p2-body-medium;
-        color: $primary-black;
-        @include desktop {
-          @include tabdesk-p2-body-medium;
+        &-label {
+          @include mobile-table-header;
+          color: $secondary-slate;
+          text-transform: capitalize;
+          @include desktop {
+            @include tabdesk-table-header;
+          }
         }
-      }
-    }
-    &-warehouse {
-      flex-grow: 2;
-      min-width: 100%;
 
-      &-label {
-        @include mobile-table-header;
-        color: $secondary-slate;
-        text-transform: capitalize;
-        @include desktop {
-          @include tabdesk-table-header;
-        }
-      }
-
-      &-text {
-        @include mobile-p2-body-medium;
-        color: $primary-black;
-        @include desktop {
-          @include tabdesk-p2-body-medium;
+        &-text {
+          @include mobile-p2-body-medium;
+          color: $primary-black;
+          @include desktop {
+            @include tabdesk-p2-body-medium;
+          }
         }
       }
     }

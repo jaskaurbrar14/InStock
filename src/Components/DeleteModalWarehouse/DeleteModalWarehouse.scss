@@ -48,9 +48,6 @@
       top: 1rem;
       right: 1rem;
       color: $primary-black;
-
-      // &-img {
-      // }
     }
     &-heading {
       @include mobile-header;
@@ -79,8 +76,6 @@
 
         justify-content: flex-end;
       }
-      @include desktop {
-      }
       &-cancel {
         display: block;
         background-color: $primary-white;
@@ -94,8 +89,6 @@
         @include tablet-and-desktop {
           padding: 0.5rem 1rem;
           flex: 0;
-        }
-        @include desktop {
         }
       }
 

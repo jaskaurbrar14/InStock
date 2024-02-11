@@ -1,5 +1,5 @@
 import React from "react";
-import edit from "../../assets/Icons/edit-24px.svg";
+import edit from "../../assets/Icons/new-edit.svg";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import "./InventoryItemDetails.scss";
 import { Link } from "react-router-dom";
@@ -27,35 +27,45 @@ function InventoryItemDetails() {
       </div>
       <hr className="Inventory__divider" />
       <article className="Inventory__details">
-        <div className="Inventory__details-description">
-          <p className="Inventory__details-description-label">
-            Item description
-          </p>
-          <p className="Inventory__details-description-text">
-            This 50", 4K LED TV provides a crystal-clear picture and vivid
-            colors.
-          </p>
-        </div>
-        <div className="Inventory__details-category">
-          <p className="Inventory__details-category-label">Category</p>
-          <p className="Inventory__details-category-text">Electronics</p>
+        <div className="Inventory__details-container">
+          <div className="Inventory__details-container-description">
+            <p className="Inventory__details-container-description-label">
+              Item description
+            </p>
+            <p className="Inventory__details-container-description-text">
+              This 50", 4K LED TV provides a crystal-clear picture and vivid
+              colors.
+            </p>
+          </div>
+          <div className="Inventory__details-container-category">
+            <p className="Inventory__details-container-category-label">
+              Category
+            </p>
+            <p className="Inventory__details-container-category-text">
+              Electronics
+            </p>
+          </div>
         </div>
         <hr className="Inventory__details-divider" />
-        <div className="Inventory__stock">
-          <div className="Inventory__stock-status">
+        <div className="Inventory__details-stock">
+          <div className="Inventory__details-stock-status">
             {" "}
-            <p className="Inventory__stock-status-label">Status</p>
-            <p className="Inventory__stock-status-text">In Stock</p>
+            <p className="Inventory__details-stock-status-label">Status</p>
+            <p className="Inventory__details-stock-status-text Inventory__details-stock-status-text--red Inventory__details-stock-status-text--green ">
+              In Stock
+            </p>
           </div>
-          <div className="Inventory__stock-quantity">
+          <div className="Inventory__details-stock-quantity">
             {" "}
-            <p className="Inventory__stock-quantity-label">Quantity</p>
-            <p className="Inventory__stock-quantity-text">500</p>
+            <p className="Inventory__details-stock-quantity-label">Quantity</p>
+            <p className="Inventory__details-stock-quantity-text">500</p>
           </div>
-          <div className="Inventory__stock-warehouse">
+          <div className="Inventory__details-stock-warehouse">
             {" "}
-            <p className="Inventory__stock-warehouse-label">Warehouse</p>
-            <p className="Inventory__stock-warehouse-text">Manhattan</p>
+            <p className="Inventory__details-stock-warehouse-label">
+              Warehouse
+            </p>
+            <p className="Inventory__details-stock-warehouse-text">Manhattan</p>
           </div>
         </div>
       </article>
