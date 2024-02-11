@@ -21,7 +21,7 @@ function AddInventory() {
 
   useEffect(() => {
     axios
-    .get("http://localhost:3000/warehouse/api/warehouses/")
+    .post("http://localhost:5050/warehouses/api/inventories")
       .then((response) => {
         setWarehouses(response.data);
       })
