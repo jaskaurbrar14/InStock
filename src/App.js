@@ -5,6 +5,9 @@ import Footer from "./Components/Footer/Footer";
 import EditWarehouse from "./Components/Edit-warehouse/editWarehouse";
 import AddWarehouse from "./Components/AddWarehouse/AddWarehouse";
 import WarehouseDetails from "./Components/WarehouseDetails/WarehouseDetails";
+import WarehouseList from "./Components/WarehouseList/WarehouseList";
+import InventoryList from "./Components/InventoryList/InventoryList";
+// import WarehouseInventoryList from "./Components/WarehouseInventoryList/WarehouseInventoryList";
 
 function App() {
   return (
@@ -12,7 +15,7 @@ function App() {
       <Header />
       <main className="main">
         <Routes>
-          <Route element={<EditWarehouse />} />
+          <Route path="/" element={<WarehouseList />} />
           <Route path="/edit-warehouse" element={<EditWarehouse />} />
           <Route element={<AddWarehouse />} />
           <Route path="/AddWarehouse" element={<AddWarehouse />} />
