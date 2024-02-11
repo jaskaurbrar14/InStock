@@ -10,7 +10,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.editinventory {
+.editinventoryitem {
   margin: auto;
   margin-top: -3%;
   border-radius: 6px;
@@ -18,18 +18,25 @@
   background-color: white;
   max-width: 90%;
   @include tablet-and-desktop {
-    margin: 0 2rem;
+    margin-top: -11.5%;
     top: 7.5rem;
   }
   @include desktop {
-    margin: 0 8rem;
+    margin-top: -6%;
   }
   &__header-wrap {
     border-bottom: 1px solid $secondary-cloud;
     display: flex;
-    padding: 2rem 0;
+    padding: 2rem 0 1rem 0.75rem;
+    @include tablet-and-desktop {
+      padding-left: 1.5rem;
+    }
+    @include tablet-and-desktop {
+      padding-left: 2rem;
+    }
   }
   &__header-icon {
+    padding-top: 0.5rem;
     margin-left: 0.5rem;
   }
   &__title {
@@ -37,7 +44,7 @@
     font-weight: $text-demi;
     font-size: 1.5rem;
     margin: 0;
-    margin-left: 0.5rem;
+    margin-left: 0.25rem;
     @include tablet-and-desktop {
       @include tabdesk-header;
     }
@@ -47,23 +54,51 @@
       display: flex;
       justify-content: space-between;
     }
+    @include desktop {
+      justify-content: center;
+    }
   }
   &__detail {
     padding: 0 1rem;
+    @include tablet-and-desktop {
+      padding-left: 2rem; 
+      padding-right: 2rem;
+    }
+    @include desktop {
+      padding-left: 3rem;
+      padding-right: 3rem; 
+    }
   }
   &__form-detail{
     position: relative;
   }
   &__form-header {
+    padding-top: 1rem;
     @include mobile-subheader;
+    @include tablet-and-desktop {
+      font-size: $tabdesk-subheader-fontsize;
+      padding-top: $tabdesk-p1-body-large-lineheight;
+    }
   }
   &__form-name {
     @include mobile-labels-links-buttons;
     font-weight: $text-demi;
     padding-top: 0.7rem;
+    padding-bottom: 0.25rem;
+    @include tablet-and-desktop {
+      padding-top: 2rem;
+      font-size: 0.9rem;
+    }
+    @include tablet-and-desktop {
+      padding-top: 1.5rem;
+    }
   }
   &__form-radio {
+    margin-left: 0.3rem;
     @include mobile-labels-links-buttons;
+    @include tablet-and-desktop {
+      font-size: 0.9rem;
+    }
   }
   &__form-radio-wrap {
     display: flex;
@@ -74,11 +109,15 @@
       gap: 4rem;
     }
   }
+  &__form-radio-inwrap{
+    display: flex;
+    align-items: center;
+  }
   &__form-input {
     border-radius: 1.25rem;
     border: 1px solid $secondary-cloud;
-    height: 2.25rem;
-    width: 12.4375rem;
+    height: 1.9rem;
+    width: 95%;
     padding: 0 1rem;
     @include mobile-labels-links-buttons;
     @include tablet-and-desktop {
@@ -86,6 +125,7 @@
     }
     @include desktop {
       width: 26.8125rem;
+      height: 2.4rem;
     }
     &:active{
       border: 1px solid $primary-indigo !important;
@@ -94,8 +134,8 @@
   &__form-input-des {
     border-radius: 1.25rem;
     border: 1px solid $secondary-cloud;
-    height: 7.5rem;
-    width: 12.4375rem;
+    height: 6.8rem;
+    width: 95%;
     padding: 0 1rem;
     position: relative;
     &::placeholder {
@@ -115,17 +155,22 @@
     }
   }
   &__form-category-name{
-    position: relative;
+    background-image: url('../../assets/Icons/arrow_drop_down-24px.svg');
+    background-position: right 10px center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    padding-right: 2rem;
     border-radius: 1.25rem;
     border: 1px solid $secondary-cloud;
-    height: 2.25rem;
-    width: 12.4375rem;
+    height: 1.9rem;
+    width: 95%;
     padding: 0 1rem;
     @include tablet-and-desktop {
       width: 18rem;
     }
     @include desktop {
       width: 26.8125rem;
+      height: 2.4rem;
     }
   }
   &__form-categoryinput-icon{
@@ -226,10 +271,9 @@
     }
   }
   &__btn-wrap {
-    background-color: $background-lightgrey;
+    background-color: white;
     display: flex;
-    justify-content: space-around;
-    padding: 1rem 0;
+    padding: 1rem 0 1rem 1rem;
     margin-top: 1.5rem;
     @include tablet-and-desktop {
       padding-right: 2rem;
@@ -241,8 +285,8 @@
     border-radius: 1.25rem;
     border:1px solid $secondary-cloud;
     text-align: center;
-    height: 2.25rem;
-    width: 7.6875rem;
+    height: 1.9rem;
+    width: 7.2rem;
     @include tablet-and-desktop {
       width: 4.5rem;
       height: 2.375rem;
@@ -255,15 +299,15 @@
   &__btn-addItem {
     background-color: $primary-indigo;
     text-align: center;
-    height: 2.25rem;
-    width: 7.6875rem;
+    height: 1.9rem;
+    width: 7.2rem;
     border-radius: 1.25rem;
     border: none;
     color: $primary-white;
+    margin-left: 1rem;
     @include tablet-and-desktop {
-      width: 6rem;
+      width: 4rem;
       height: 2.375rem;
-      margin-left: 1rem;
     }
     &:hover{
       background-color: $primary-black;

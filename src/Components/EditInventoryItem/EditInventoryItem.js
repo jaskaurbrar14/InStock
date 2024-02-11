@@ -6,7 +6,7 @@ import backarrow from "../../assets/Icons/arrow_back-24px.svg";
 import dropdown from "../../assets/Icons/arrow_drop_down-24px.svg";
 import ErrorIcon from "../../assets/Icons/error-24px.svg";
 
-function AddInventory() {
+function EditInventoryItem() {
   // const [inventory, setInventory] = useState([]);
   // const [formData, setFormData] = useState({
   //   itemName: "",
@@ -156,33 +156,33 @@ function AddInventory() {
     }
   };
   return (
-    <section className="editinventory">
-      <div className="editinventory__wrap">
-        <div className="editinventory__header-wrap">
-          <div className="editinventory__icon-wrap">
+    <section className="editinventoryitem">
+      <div className="editinventoryitem__wrap">
+        <div className="editinventoryitem__header-wrap">
+          <div className="editinventoryitem__icon-wrap">
             <img
               src={backarrow}
               alt="back arrow icon"
-              className="editinventory__header-icon"
+              className="editinventoryitem__header-icon"
             />
           </div>
-          <div className="editinventory__title-wrap">
-            <h1 className="editinventory__title">Edit Inventory Item</h1>
+          <div className="editinventoryitem__title-wrap">
+            <h1 className="editinventoryitem__title">Edit Inventory Item</h1>
           </div>
         </div>
         <div>
-          <form action="" className="editinventory__detail-form">
-            <div className="editinventory__detail-form-container">
-              <div className="editinventory__detail">
-                <div className="editinventory__form-header-wrap">
-                  <h2 className="editinventory__form-header">Item Details</h2>
+          <form action="" className="editinventoryitem__detail-form">
+            <div className="editinventoryitem__detail-form-container">
+              <div className="editinventoryitem__detail">
+                <div className="editinventoryitem__form-header-wrap">
+                  <h2 className="editinventoryitem__form-header">Item Details</h2>
                 </div>
-                <div className="editinventory__form-detail">
-                  <p className="editinventory__form-name">Item Name</p>
+                <div className="editinventoryitem__form-detail">
+                  <p className="editinventoryitem__form-name">Item Name</p>
                   <input
                     type="text"
                     placeholder="Item Name"
-                    className="editinventory__form-input ${formErrors.itemName ? 'error' : ''}`}"
+                    className="editinventoryitem__form-input ${formErrors.itemName ? 'error' : ''}`}"
                     value={formData.item_name}
                     onChange={(e) =>
                       handleInputChange("itemName", e.target.value)
@@ -196,11 +196,11 @@ function AddInventory() {
                   )}
                 </div>
                 <div>
-                  <p className="editinventory__form-name">Description</p>
+                  <p className="editinventoryitem__form-name">Description</p>
                   <textarea
                     type="text"
                     placeholder="Please enter a brief item description..."
-                    className="editinventory__form-input-des ${formErrors.description ? 'error' : ''}`}"
+                    className="editinventoryitem__form-input-des ${formErrors.description ? 'error' : ''}`}"
                     rows={5}
                     name="description"
                     value={formData.description}
@@ -209,101 +209,90 @@ function AddInventory() {
                     }
                   />
                   {formErrors.description && (
-                    <span className="editinventory__error-message-description">
+                    <span className="editinventoryitem__error-message-description">
                       {formErrors.description}
                     </span>
                   )}
                 </div>
                 <div>
-                  <p className="editinventory__form-name">Category</p>
+                  <p className="editinventoryitem__form-name">Category</p>
                   <input
                     type="text"
                     placeholder="Item Name"
-                    className="editinventory__form-category-name ${formErrors.category ? 'error' : ''}`}"
+                    className="editinventoryitem__form-category-name ${formErrors.category ? 'error' : ''}`}"
                     value={formData.category}
                     onChange={(e) =>
                       handleInputChange("category", e.target.value)
                     }
                   />
-                  <img
-                    src={dropdown}
-                    alt="dropdown-icon"
-                    className="editinventory__form-categoryinput-icon"
-                  />
                   {formErrors.category && (
-                    <span className="editinventory__error-message-category">
+                    <span className="editinventoryitem__error-message-category">
                       {formErrors.category}
                     </span>
                   )}
                 </div>
               </div>
               <div className="editWarehouse__divider"></div>
-              <div className="editinventory__detail">
-                <div className="editinventory__form-header-wrap">
-                  <h2 className="editinventory__form-header">
+              <div className="editinventoryitem__detail">
+                <div className="editinventoryitem__form-header-wrap">
+                  <h2 className="editinventoryitem__form-header">
                     Item Availability
                   </h2>
                 </div>
                 <div>
-                  <p className="editinventory__form-name">Status</p>
-                  <div className="editinventory__form-radio-wrap">
-                    <div>
+                  <p className="editinventoryitem__form-name">Status</p>
+                  <div className="editinventoryitem__form-radio-wrap">
+                    <div className="editinventoryitem__form-radio-inwrap">
                       <input
                         type="radio"
                         checked={formData.status === "In Stock"}
                         onChange={() => handleStatusChange("In Stock")}
                         data-status="In Stock"
                       />
-                      <span className="editinventory__form-radio">In stock</span>
+                      <span className="editinventoryitem__form-radio">In stock</span>
                     </div>
-                    <div>
+                    <div className="editinventoryitem__form-radio-inwrap">
                       <input
                         type="radio"
-                        className="editinventory__form-radio"
+                        className="editinventoryitem__form-radio"
                         checked={formData.status === "Out of Stock"}
                         onChange={() => handleStatusChange("Out of Stock")}
                         data-status="Out of Stock"
                       />
-                      <span className="editinventory__form-radio">
+                      <span className="editinventoryitem__form-radio">
                         Out of stock
                       </span>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <p className="editinventory__form-name">Warehouse</p>
+                  <p className="editinventoryitem__form-name">Warehouse</p>
                   <input
                     type="text"
                     placeholder="Please select"
-                    className="editinventory__form-category-name"
+                    className="editinventoryitem__form-category-name"
                     value={formData.warehouse}
                     onChange={(e) =>
                       handleInputChange("warehouse", e.target.value)
                     }
                   />
-                  <img
-                    src={dropdown}
-                    alt="dropdown-icon"
-                    className="editinventory__form-input-icon-quality"
-                    data-status={formData.status}
-                  />
                   {formErrors.warehouse && (
-                    <span className="editinventory__error-message-warehouse">
+                    <span className="editinventoryitem__error-message-warehouse">
                       {formErrors.warehouse}
                     </span>
                   )}
                 </div>
               </div>
             </div>
-            <div className="editinventory__btn-wrap">
-              <div className="editinventory__btn-cancel-wrap">
-                <button className="editinventory__btn-cancel" onClick={handleCancel}>
+            <div className="editinventoryitem__btn-wrap">
+              <div className="editinventoryitem__btn-cancel-wrap">
+                <button className="editinventoryitem__btn-cancel" onClick={handleCancel}>
                   Cancel
                 </button>
               </div>
-              <div className="editinventory__btn-addItem-wrap">
+              <div className="editinventoryitem__btn-addItem-wrap">
                 <button
-                  className="editinventory__btn-addItem"
+                  className="editinventoryitem__btn-addItem"
                   onClick={handleSave}
                 >
                   Save
@@ -317,4 +306,4 @@ function AddInventory() {
   );
 }
 
-export default AddInventory;
+export default EditInventoryItem;
