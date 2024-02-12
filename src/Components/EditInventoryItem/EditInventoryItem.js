@@ -97,11 +97,15 @@ function EditInventoryItem() {
   const handleStatusChange = (event) => {
     const { name, value } = event.target;
     console.log(formData);
-    setFormData((prevFormData) => ({
+    setFormData(prevFormData => ({
       ...prevFormData,
       [name]: value,
     }));
   };
+
+  
+
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -245,20 +249,21 @@ function EditInventoryItem() {
                     <div className="editinventoryitem__form-radio-inwrap">
                       <input
                         type="radio"
+                        name="status"
+                        value="In Stock"
                         checked={formData.status === "In Stock"}
-                        onChange={() => handleStatusChange("In Stock")}
-                        data-status="In Stock"
+                        onChange={handleStatusChange}
                       />
                       <span className="editinventoryitem__form-radio">In stock</span>
                     </div>
                     <div className="editinventoryitem__form-radio-inwrap">
-                      <input
-                        type="radio"
-                        className="editinventoryitem__form-radio"
+                    <input
+                      type="radio"
+                        name="status"
+                        value="Out of Stock"
                         checked={formData.status === "Out of Stock"}
-                        onChange={() => handleStatusChange("Out of Stock")}
-                        data-status="Out of Stock"
-                      />
+                        onChange={handleStatusChange}
+                    />
                       <span className="editinventoryitem__form-radio">
                         Out of stock
                       </span>
