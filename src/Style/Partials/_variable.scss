@@ -1,0 +1,74 @@
+/* Breakpoints */
+$mobile-breakpoint: 767px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+$min-mobile-width: 320px;
+$max-desktop-width: 1920px;
+
+$wrapper-max-width: 1140px;
+
+/* Font weight */
+$text-regular: 400;
+$text-demi: 600;
+
+/* Mobile */
+
+$mobile-header-fontsize: 1.75rem;
+$mobile-header-lineheight: 2.25rem;
+
+$mobile-subheader-fontsize: 1.25rem;
+$mobile-subheader-lineheight: 1.75rem;
+
+$mobile-labels-links-buttons-fontsize: 0.8125rem;
+$mobile-labels-links-buttons-lineheight: 1.25rem;
+
+$mobile-table-header-fontsize: 0.6875rem;
+$mobile-table-header-lineheight: 1rem;
+
+$mobile-p1-body-large-fontsize: 0.9375rem;
+$mobile-p1-body-large-lineheight: 1.625rem;
+
+$mobile-p2-body-medium-fontsize: 0.8125rem;
+$mobile-p2-body-medium-lineheight: 1.25rem;
+
+$mobile-p3-body-small-fontsize: 0.6875rem;
+$mobile-p3-body-small-lineheight: 1rem;
+
+/* Tablet and Desktop */
+$tabdesk-header-fontsize: 2rem;
+$tabdesk-header-lineheight: 2.5rem;
+
+$tabdesk-subheader-fontsize: 1.5rem;
+$tabdesk-subheader-lineheight: 2rem;
+
+$tabdesk-labels-links-buttons-fontsize: 0.875rem;
+$tabdesk-labels-links-buttons-lineheight: 1.375rem;
+
+$tabdesk-table-header-fontsize: 0.75rem;
+$tabdesk-table-header-lineheight: 1.125rem;
+
+$tabdesk-p1-body-large-fontsize: 1rem;
+$tabdesk-p1-body-large-lineheight: 1.75rem;
+
+$tabdesk-p2-body-medium-fontsize: 0.875rem;
+$tabdesk-p2-body-medium-lineheight: 1.375rem;
+
+$tabdesk-p3-body-small-fontsize: 0.75rem;
+$tabdesk-p3-body-small-lineheight: 1.125rem;
+
+/* Color */
+
+$primary-black: #13182c;
+$primary-white: #ffffff;
+$primary-indigo: #2e66e5;
+
+$secondary-slate: #5c667e;
+$secondary-cloud: #bdc5d5;
+
+$background-graphite: #232940;
+$background-lightgrey: #f7f8f9;
+
+$supporting-green: #158463;
+$supporting-red: #c94515;
+$tablehover: #f0f4fd;

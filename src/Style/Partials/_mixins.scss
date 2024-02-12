@@ -1,0 +1,79 @@
+@use "./variable" as *;
+
+@mixin mobile {
+  @media screen and (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+@mixin tablet-and-desktop {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+// MOBILE
+@mixin mobile-header {
+  font-size: $mobile-header-fontsize;
+  line-height: $mobile-header-lineheight;
+}
+@mixin mobile-subheader {
+  font-size: $mobile-subheader-fontsize;
+  line-height: $mobile-subheader-lineheight;
+}
+@mixin mobile-labels-links-buttons {
+  font-size: $mobile-labels-links-buttons-fontsize;
+  line-height: $mobile-labels-links-buttons-lineheight;
+}
+
+@mixin mobile-table-header {
+  font-size: $mobile-table-header-fontsize;
+  line-height: $mobile-table-header-lineheight;
+}
+
+@mixin mobile-p1-body-large {
+  font-size: $mobile-p1-body-large-fontsize;
+  line-height: $mobile-p1-body-large-lineheight;
+}
+@mixin mobile-p2-body-medium {
+  font-size: $mobile-p2-body-medium-fontsize;
+  line-height: $mobile-p2-body-medium-lineheight;
+}
+@mixin mobile-p3-body-small {
+  font-size: $mobile-p3-body-small-fontsize;
+  line-height: $mobile-p3-body-small-lineheight;
+}
+//TABLET AND DESKTOP
+@mixin tabdesk-header {
+  font-size: $tabdesk-header-fontsize;
+  line-height: $tabdesk-header-lineheight;
+}
+@mixin tabdesk-subheader {
+  font-size: $tabdesk-subheader-fontsize;
+  line-height: $tabdesk-subheader-lineheight;
+}
+
+@mixin tabdesk-labels-links-buttons {
+  font-size: $tabdesk-labels-links-buttons-fontsize;
+  line-height: $tabdesk-labels-links-buttons-lineheight;
+}
+
+@mixin tabdesk-table-header {
+  font-size: $tabdesk-table-header-fontsize;
+  line-height: $tabdesk-table-header-lineheight;
+}
+@mixin tabdesk-p1-body-large {
+  font-size: $tabdesk-p1-body-large-fontsize;
+  line-height: $tabdesk-p1-body-large-lineheight;
+}
+@mixin tabdesk-p2-body-medium {
+  font-size: $tabdesk-p2-body-medium-fontsize;
+  line-height: $tabdesk-p2-body-medium-lineheight;
+}
+@mixin tabdesk-p3-body-small {
+  font-size: $tabdesk-p3-body-small-fontsize;
+  line-height: $tabdesk-p3-body-small-lineheight;
+}
