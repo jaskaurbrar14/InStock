@@ -23,7 +23,7 @@ function WarehouseList() {
   };
 
   useEffect(() => {
-    const apiUrl = 'http://localhost:5050/api/warehouses';
+    const apiUrl = 'http://localhost:8080/api/warehouses';
     const fetchWarehouses = async () => {
       try {
         const warehousesResponse = await axios.get(apiUrl);
