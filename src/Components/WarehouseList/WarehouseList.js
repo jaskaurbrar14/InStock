@@ -133,7 +133,12 @@ function WarehouseList() {
                   <img src={deleteIcon} alt="delete button" />
                 </button>
 
-                {openModal && <DeleteModalWarehouse modalClose={modalClose} />}
+                {openModal && (
+                  <DeleteModalWarehouse
+                    modalClose={modalClose}
+                    warehouse={selectedWarehouse}
+                  />
+                )}
               </div>
               <div>
                 <button className="warehouselist__items__row__actioncol__btns">

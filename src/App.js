@@ -6,7 +6,7 @@ import EditWarehouse from "./Components/Edit-warehouse/editWarehouse";
 import AddWarehouse from "./Components/AddWarehouse/AddWarehouse";
 import WarehouseList from "./Components/WarehouseList/WarehouseList";
 import InventoryList from "./Components/InventoryList/InventoryList";
-// import WarehouseInventoryList from "./Components/WarehouseInventoryList/WarehouseInventoryList";
+import WarehouseInventoryList from "./Components/WarehouseInventoryList/WarehouseInventoryList";
 import InventoryItemDetails from "./Components/InventoryItemDetails/InventoryItemDetails";
 
 function App() {
