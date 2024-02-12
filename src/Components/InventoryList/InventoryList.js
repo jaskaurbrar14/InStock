@@ -1,9 +1,20 @@
+import React, { useState } from "react";
+
 import "./InventoryList.scss";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg"
 import editIcon from "../../assets/Icons/edit-24px.svg"
 import {Link} from "react-router-dom";
+import DeleteInventoryModal from "../DeleteInventoryModal/DeleteModalInventory"
 
 export default function InventoryList(){
+  const [openModal, setOpenModal] = useState(false);
+
+  const modalOpen = () => {
+    setOpenModal(true);
+  };
+  const modalClose = () => {
+    setOpenModal(false);
+  };
 
 return(
 <main className="inventorylist">
@@ -46,9 +57,10 @@ return(
       </div>
     </section>
     <section className="table__button">
-        <button className="table__button--delete">
+        <button className="table__button--delete" onClick={modalOpen}>
           <img className="table__button--deleteimg" src={deleteIcon} alt="delete icon"/>
         </button>
+        {openModal && <DeleteInventoryModal modalClose={modalClose} />}
         <button className="table__button--edit">
           <img className="table__button--editimg" src={editIcon} alt="edit icon"/>
         </button>
@@ -84,9 +96,10 @@ return(
             </div>
     </section>
     <section className="table__button">
-        <button className="table__button--delete">
+        <button className="table__button--delete" onClick={modalOpen}>
           <img src={deleteIcon} alt="publish icon"/>
         </button>
+        {openModal && <DeleteInventoryModal modalClose={modalClose} />}
         <button className="table__button--edit">
           <img src={editIcon} alt="publish icon"/>
         </button>
@@ -113,9 +126,10 @@ return(
     <td className="tabletablet__data">Manhattan</td>
     <td className="tabletablet__data">
       <section className="table__button">
-          <button className="table__button--delete">
+          <button className="table__button--delete" onClick={modalOpen}>
            <img src={deleteIcon} alt="publish icon"/>
           </button>
+          {openModal && <DeleteInventoryModal modalClose={modalClose} />}
          <button className="table__button--edit">
            <img src={editIcon} alt="publish icon"/>
           </button>
@@ -134,9 +148,10 @@ return(
     <td className="tabletablet__data">Manhattan</td>
     <td className="tabletablet__data">
       <section className="table__button">
-          <button className="table__button--delete">
-           <img src={deleteIcon} alt="publish icon"/>
+          <button className="table__button--delete" onClick={modalOpen}>
+            <img src={deleteIcon} alt="publish icon"/>
           </button>
+          {openModal && <DeleteInventoryModal modalClose={modalClose} />}
          <button className="table__button--edit">
            <img src={editIcon} alt="publish icon"/>
           </button>
