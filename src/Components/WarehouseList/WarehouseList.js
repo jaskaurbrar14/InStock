@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import DeleteModalWarehouse from "../DeleteModalWarehouse/DeleteModalWarehouse";
 
@@ -23,13 +23,13 @@ function WarehouseList() {
   };
 
   useEffect(() => {
-    const apiUrl = 'http://localhost:8080/api/warehouses';
+    const apiUrl = "http://localhost:8080/api/warehouses";
     const fetchWarehouses = async () => {
       try {
         const warehousesResponse = await axios.get(apiUrl);
         setWarehouses(warehousesResponse.data);
       } catch (error) {
-        console.error('Error fetching list of warehosues:', error);
+        console.error("Error fetching list of warehosues:", error);
       }
     };
 
@@ -133,7 +133,12 @@ function WarehouseList() {
                   <img src={deleteIcon} alt="delete button" />
                 </button>
 
-                {openModal && <DeleteModalWarehouse modalClose={modalClose} />}
+                {openModal && (
+                  <DeleteModalWarehouse
+                    modalClose={modalClose}
+                    warehouse={warehouse}
+                  />
+                )}
               </div>
               <div>
                 <button className="warehouselist__items__row__actioncol__btns">
