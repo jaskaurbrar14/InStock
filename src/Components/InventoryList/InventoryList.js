@@ -29,32 +29,32 @@ return(
   </section>
   <div className="table__mobilecontainer">
     <section className="table__title--parent">
-            <div className="table__detailparent">
-              <div className="table__wrapper">
-                <div className="table__detail">
-                  <label className="table__title">INVENTORY ITEM</label>
-                  <Link to="/inventorylist/:id"><p className="table__value--product">Television</p></Link>
-                </div>
-                <div className="table__detail">
-                  <label className="table__title">CATEGORY</label>
-                  <p className="table__value">Electronics</p>
-                </div>
-              </div>
-              <div className="table__wrapper">
-                <div className="table__detail">
-                  <label className="table__title">STATUS</label>
-                  <p className="table__value status1 status2">IN STOCK</p>
-                </div>
-                <div className="table__detail">
-                  <label className="table__title">QTY</label>
-                  <p className="table__value">500</p>
-                </div>
-                <div className="table__detail">
-                  <label className="table__title">WAREHOUSE</label>
-                  <p className="table__value">Manhattan</p>
-                </div>
-              </div>
-            </div>
+      <div className="table__detailparent">
+        <div className="table__wrapper">
+          <div className="table__detail">
+            <label className="table__title">INVENTORY ITEM</label>
+            <Link to="/inventorylist/:id"><p className="table__value--product">Television</p></Link>
+          </div>
+          <div className="table__detail">
+            <label className="table__title">CATEGORY</label>
+            <p className="table__value">Electronics</p>
+          </div>
+        </div>
+        <div className="table__wrapper">
+          <div className="table__detail">
+            <label className="table__title">STATUS</label>
+            <p className="table__value status1 status2">IN STOCK</p>
+          </div>
+          <div className="table__detail">
+             <label className="table__title">QTY</label>
+            <p className="table__value">500</p>
+          </div>
+          <div className="table__detail">
+            <label className="table__title">WAREHOUSE</label>
+            <p className="table__value">Manhattan</p>
+          </div>
+        </div>
+      </div>
     </section>
     <section className="table__button">
         <button className="table__button--delete" onClick={modalOpen}>

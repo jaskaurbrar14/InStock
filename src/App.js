@@ -12,12 +12,14 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
+      {/* <WarehouseList></WarehouseList> */}
       <main className="main">
         <Routes>
           <Route path="/" element={<WarehouseList />} />
           <Route path="/edit-warehouse" element={<EditWarehouse />} />
           <Route element={<AddWarehouse />} />
           <Route path="/AddWarehouse" element={<AddWarehouse />} />
+          <Route path="/warehouseinventorylist" element={<WarehouseInventoryList />} />
           <Route path="/inventorylist" element={<InventoryList />} />
           {/* <Route path="/warehouseinventorylist" element={<WarehouseInventoryList />} /> */}
         </Routes>
