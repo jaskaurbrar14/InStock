@@ -23,7 +23,7 @@ function AddInventory() {
 
   useEffect(() => {
     axios
-    .post(`${REACT_APP_SERVER_URL}/warehouses/api/inventories`)
+    .post(`${REACT_APP_SERVER_URL}/warehouses`)
       .then((response) => {
         setWarehouses(response.data);
       })
@@ -87,8 +87,8 @@ function AddInventory() {
         newInventory.quantity = 0;
       }
 
-      await axios.post(`${REACT_APP_SERVER_URL}/api/inventories`, newInventory);
-      navigate("/inventories");
+      await axios.post(`${REACT_APP_SERVER_URL}/warehouses/${selectedWarehouseId}/inventories`, newInventory);
+  navigate("/inventories");
     } catch (error) {
       console.error("Error adding inventory:", error);
     }
