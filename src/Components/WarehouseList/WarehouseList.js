@@ -136,7 +136,7 @@ function WarehouseList() {
                 {openModal && (
                   <DeleteModalWarehouse
                     modalClose={modalClose}
-                    warehouse={selectedWarehouse}
+                    warehouse={warehouse}
                   />
                 )}
               </div>
