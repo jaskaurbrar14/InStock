@@ -87,7 +87,7 @@ function AddInventory() {
         newInventory.quantity = 0;
       }
 
-      await axios.post("http://localhost:3000/api/inventories", newInventory);
+      await axios.post(`${REACT_APP_SERVER_URL}/api/inventories`, newInventory);
       navigate("/inventories");
     } catch (error) {
       console.error("Error adding inventory:", error);
@@ -126,7 +126,7 @@ function AddInventory() {
                     onChange={handleInputChange}
                   />
                   {formErrors.item_name && (
-                    <div className="add-inventory__error">
+                    <div className="addinventory__error">
                       <img
                         src={ErrorIcon}
                         className="error-icon"
@@ -148,7 +148,7 @@ function AddInventory() {
                     onChange={handleInputChange}
                   ></textarea>
                   {formErrors.description && (
-                    <div className="add-inventory__error">
+                    <div className="addinventory__error">
                       <img
                         src={ErrorIcon}
                         className="error-icon"
@@ -178,7 +178,7 @@ function AddInventory() {
                   </div>
 
                   {formErrors.category && (
-                    <div className="add-inventory__error">
+                    <div className="addinventory__error">
                       <img
                         src={ErrorIcon}
                         className="error-icon"
@@ -233,7 +233,7 @@ function AddInventory() {
                       onChange={handleStatusChange}
                     />
                     {formErrors.quantity && (
-                      <div className="add-inventory__error">
+                      <div className="addinventory__error">
                         <img
                           src={ErrorIcon}
                           className="error-icon"
@@ -262,7 +262,7 @@ function AddInventory() {
                   </select>
 
                   {formErrors.warehouse_id && (
-                    <div className="add-inventory__error">
+                    <div className="addinventory__error">
                       <img
                         src={ErrorIcon}
                         className="error-icon"
